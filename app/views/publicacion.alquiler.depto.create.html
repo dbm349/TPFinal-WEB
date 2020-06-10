@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva publicación: ALQUILER DE DEPARTAMENTO{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <h2>Nueva Publicación</h2>
+    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos de la propiedad</legend>
+
+            <article>
+                <label for="direccion">Direccion </label>
+                <input type="text" id="direccion" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="supTotal">Sup.Total </label>
+                <input type="number" id="supTotal" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
+            </article>
+
+
+            <article>
+                <label for="supCub">Sup.Cubierta </label>
+                <input type="number" id="supCub" name="supCub" placeholder="Superficie Cubierta" value="{{ supCub }}" >
+            </article>
+
+
+             <article>
+                <label for="ambientes">Ambientes </label>
+                <input type="number" id="ambientes" name="ambientes" min="1" max="15" placeholder="Cantidad de ambientes" value="{{ ambientes }}" >
+            </article>
+
+            <article>
+                <label for="dormitorios">Dormitorios </label>
+                <input type="number" id="dormitorios" name="dormitorios" min="1" max="20" placeholder="Cantidad de dormitorios" value="{{ dormitorios }}" >
+            </article>
+
+            <article>
+                <label for="baños">Baños </label>
+                <input type="number" id="baños" name="baños" min="1" max="15" placeholder="Cantidad de baños" value="{{ baños }}" >
+            </article>
+
+
+            <article>
+                <label for="piso">Piso </label>
+                <input type="number" id="piso" name="piso" min="1" max="60" placeholder="Número de piso" value="{{ piso }}" >
+            </article>
+
+
+            <article>
+                <label for="cochera">Cochera </label>
+                <input type="radio" id="cocheraSi" name="cocheraSi" value="{{ si }}" >
+                <label for="si">Si </label>
+                <input type="radio" id="cocheraNo" name="cocheraNo" value="{{ no }}" >
+                <label for="no">No </label>
+            </article>
+
+
+  
+            <article>
+                <label for="antiguedad">Antiguedad </label>
+                <input type="number" id="antiguedad" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
+            </article>
+
+
+            <article>
+                <label for="precio">Alquiler </label>
+                <input type="number" id="precio" name="precio" placeholder="Precio de venta" value="{{ precio }}" >
+            </article>
+
+
+            <article>
+                <label for="expensas">Expensas </label>
+                <input type="number" id="expensas" name="expensas" placeholder="Valor de expensas" value="{{ expensas }}" >
+            </article>
+
+
+            <article>
+                <label for="moneda">Moneda </label>
+                <input type="radio" id="dolar" name="dolar" value="{{ dolar }}" >
+                <label for="dolar">Dolar </label>
+                <input type="radio" id="peso" name="peso" value="{{ peso }}" >
+                <label for="peso">Peso </label>
+            </article>
+
+
+            <article>
+                <label>Descripción</label>
+                <textarea name="descripcion" rows="10" cols="40">Puede realizar aquí la descripcion de la propiedad</textarea>
+            </article>
+
+        
+            <article>
+                <label>Fotos</label>
+                <input type="file" name="fotos" accept=".jpg,.png">
+            </article>
+
+            <article>
+                * <small>Este dato es requerido</small>
+            </article>
+
+            <article>
+                <input type="reset" name="limpiar" value="limpiar">
+                <input type="submit" name="submit" value="Enviar">
+            </article>
+        </fieldset>
+    </form>
+{% endblock %}
