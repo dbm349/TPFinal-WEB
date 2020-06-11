@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Crear nuevo Usuario{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <h2>Nuevo Turno</h2>
+    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Registro</legend>
+
+            <article>
+                <label for="nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su nombre" value="{{ nombre }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="apellido">Apellido </label>
+                <input type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su apellido" value="{{ apellido }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su email" value="{{ email }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="tel">Teléfono </label>
+                <input type="number" id="tel" name="tel" pattern=[0-9\+][0-9]{13} placeholder="Ingrese su teléfono" value="{{ tel }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="pass">Contraseña </label>
+                <input type="password" id="pass" name="pass" pattern=".{8,50}" value="{{ pass }}" >
+                *
+            </article>
+
+
+
+            <article>
+                * <small>Este dato es requerido</small>
+            </article>
+
+            <article>
+                <input type="reset" name="limpiar" value="limpiar">
+                <input type="submit" name="submit" value="Enviar">
+            </article>
+        </fieldset>
+    </form>
+{% endblock %}
