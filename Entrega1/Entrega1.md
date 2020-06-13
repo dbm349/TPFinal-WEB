@@ -19,20 +19,20 @@ que cumplan con esos requisitos.
 
 ## Modelo de Interfaces del Sitio 
 ```
-Haciendo click en este enlace podrá observar las distintas pantallas del sitio ![](EntregaN°1/Wireframes.md)
+Haciendo click en este enlace podrá observar las distintas pantallas del sitio 
 ```
 
 ## Diseño del SiteMap
 ```
-Haciendo click en este enlace podrá observar como será la navegación en el sitio ![](EntregaN°1/SiteMap.md)
+Haciendo click en este enlace podrá observar como será la navegación en el sitio
 ```
 
 ## Diseño del Modelo de Datos
 ```
-Haciendo click en este enlace podrá observar el modelo de datos del sitio ![](EntregaN°1/DiagramaEntidadRelación.md)
+Haciendo click en este enlace podrá observar el modelo de datos del sitio 
 ```
 
 ## Diseño del Modelo de Objetos (Back-End)
 ```
-Haciendo click en este enlace podrá observar el diagrama de clases del sitio ![](EntregaN°1/DiagramaDeClases.md)
+Haciendo click en este enlace podrá observar el diagrama de clases del sitio 
 ```
