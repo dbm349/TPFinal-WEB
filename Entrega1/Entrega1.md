@@ -33,6 +33,4 @@ Haciendo click en este enlace podrá observar el modelo de datos del sitio
 ```
 
 ## Diseño del Modelo de Objetos (Back-End)
-```
-Haciendo click [aquí] (https://github.com/dbm349/TPFinal-WEB/blob/master/Entrega1/DiagramaDeClases.md) podrá observar el diagrama de clases del sitio 
-```
+Haciendo click [aquí] podrá observar el diagrama de clases del sitio 
