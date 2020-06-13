@@ -18,19 +18,16 @@ que cumplan con esos requisitos.
 
 
 ## Modelo de Interfaces del Sitio 
-```
-Haciendo click en este enlace podrá observar las distintas pantallas del sitio 
-```
+Podrá observar las distintas pantallas del sitio haciendo click [aquí ](https://github.com/dbm349/TPFinal-WEB/blob/master/Entrega1/Wireframes.md).
+
 
 ## Diseño del SiteMap
-```
-Haciendo click en este enlace podrá observar como será la navegación en el sitio
-```
+Podrá observar como será la navegación en el sitio haciendo click [aquí ](https://github.com/dbm349/TPFinal-WEB/blob/master/Entrega1/SiteMap.md).
+
 
 ## Diseño del Modelo de Datos
-```
-Haciendo click en este enlace podrá observar el modelo de datos del sitio 
-```
+Podrá observar el modelo de datos del sitio haciendo click [aquí ](https://github.com/dbm349/TPFinal-WEB/blob/master/Entrega1/DiagramaEntidadRelación.md). 
+
 
 ## Diseño del Modelo de Objetos (Back-End)
-Haciendo click [aquí] podrá observar el diagrama de clases del sitio 
+Podrá observar el diagrama de clases del sitio haciendo click [aquí ](https://github.com/dbm349/TPFinal-WEB/blob/master/Entrega1/DiagramaDeClases.md). 
