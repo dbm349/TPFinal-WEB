@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva publicación: NUEVA PUBLICACIÓN{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <h2>Nueva propiedad para publicar</h2>
+    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Nueva Publicación</legend>
+
+            <article>
+                <label for="operacion">Operación </label>
+                    <select id="operacion" name="operacion">
+                        <option value="venta">Venta</option>
+                        <option value="alquiler">Alquiler</option>
+                    </select>
+            </article>
+
+            <article>
+                <label for="propiedad">Propiedad </label>
+                    <select id="propiedad" name="propiedad">
+                        <option value="casa">Casa</option>
+                        <option value="departamento">Departamento</option>
+                        <option value="lote">Lote</option>
+                        <option value="galpón">Galpón</option>
+                        <option value="local">Local</option>
+                        <option value="quinta">Quinta</option>
+                        <option value="cochera">Cochera</option>
+                    </select>
+            </article>
+
+            <article>
+                <input type="submit" name="submit" value="Enviar">
+            </article>
+        </fieldset>
+    </form>
+
+{% endblock %}
