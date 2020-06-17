@@ -17,4 +17,9 @@ class Users extends Model
     {
         $this->db->insert($this->table, $user);
     }
+
+    public function BuscarUsuario(array $user)
+    {
+        return $this->db->buscarUser($this->table, $user);
+    }
 }

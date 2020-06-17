@@ -61,6 +61,21 @@ class QueryBuilder
         }
     }
 
+    public function buscarUser($table, $parameters)
+    {
+        $parameters = $this->cleanParameterName($parameters);
+
+        $statement = $this->pdo->prepare("select * from {$table} where mail='{$parameters['mail']}' and pass='{$parameters['pass']}' ");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+
+        if($statement->rowCount() == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     private function sendToLog(Exception $e)
     {
         if ($this->logger) {

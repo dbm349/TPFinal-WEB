@@ -3,18 +3,15 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Models\Tasks;
+use App\Models\Propiedad;
 
-class TasksController extends Controller
+class ControladorPropiedades extends Controller
 {
     public function __construct()
     {
-        $this->model = new Tasks();
+        $this->model = new Propiedad();
     }
 
-    /**
-     * Show all task
-     */
     public function index()
     {
         $tasks = $this->model->get();

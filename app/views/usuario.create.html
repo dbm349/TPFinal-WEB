@@ -12,8 +12,7 @@
 {% endblock %}
 
 {% block main %}
-    <h2>Nuevo Turno</h2>
-    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+    <form action="/users/validate" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Registro</legend>
 
@@ -43,19 +42,17 @@
 
             <article>
                 <label for="pass">Contraseña </label>
-                <input type="password" id="pass" name="pass" pattern=".{8,50}" value="{{ pass }}" >
+                <input type="password" id="pass" name="pass" pattern=".{8,50}" value="{{ pass }}" required>
                 *
             </article>
-
-
 
             <article>
                 * <small>Este dato es requerido</small>
             </article>
 
             <article>
-                <input type="reset" name="limpiar" value="limpiar">
-                <input type="submit" name="submit" value="Enviar">
+                <input type="reset" name="limpiar" value="Limpiar">
+                <input type="submit" name="submit" value="Registrarme">
             </article>
         </fieldset>
     </form>

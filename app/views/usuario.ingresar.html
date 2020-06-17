@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio Sesion{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <form action="/users/sesion" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Inicio Sesion</legend>
+
+            <article>
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su email" value="{{ mail }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="pass">Contraseña </label>
+                <input type="password" id="pass" name="pass" pattern=".{8,50}" required>
+                *
+            </article>
+
+            <article>
+                <input type="reset" name="limpiar" value="Limpiar">
+                <input type="submit" name="submit" value="Iniciar Sesion">
+            </article>
+        </fieldset>
+    </form>
+
+    {% if erroresInicio is not empty %}
+        <p>Usuario o Contraseña Incorrecto</p>
+    {% endif %}
+{% endblock %}
