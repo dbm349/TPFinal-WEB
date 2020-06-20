@@ -14,11 +14,9 @@ class ControladorUsuarios extends Controller
         $this->model = new Users();
     }
 
-    public function ingresar()
-    {
-        return view('usuario.ingresar');
-    }
+    
 
+    /**--------------REGISTRO DE USUARIO ---------------*/
     public function registrar()
     {
         return view('usuario.create');
@@ -29,8 +27,8 @@ class ControladorUsuarios extends Controller
         $Errores =  array();
         require 'app/controllers/ValidateUsuarioNuevo.php';
 
-        if (empty($Errores)){ 
-
+        /*Si no hay errores guardo usuario nuevo en la BD*/ 
+        if (empty($Errores)){
             $usuario = [
                 'nombre' => $_POST['nombre'],
                 'apellido' => $_POST['apellido'],
@@ -38,10 +36,8 @@ class ControladorUsuarios extends Controller
                 'telefono' => $_POST['tel'],
                 'pass' => md5($_POST['pass'])
             ];
-
-            $this->model->insert($usuario);
+            $this->model->insert($usuario); /*FALTA VALIDAR SI YA EXISTE EL MAIL DE USUARIO EN LA BASE DE DATOS*/
             return view('usuario.ingresar');
-
         }else{
             return view('usuario.create', [
                                             'errores'=> $Errores,
@@ -52,6 +48,13 @@ class ControladorUsuarios extends Controller
             ]);
         }
         
+    }
+
+    /**---------------INICIO DE SESION ---------------*/
+
+    public function ingresar()
+    {
+        return view('usuario.ingresar');
     }
 
     public function validarInicioSesion()
@@ -71,9 +74,9 @@ class ControladorUsuarios extends Controller
             $existe = $this->model->BuscarUsuario($user);
             if($existe){
                 session_start();
-                $_SESSION['sesion_iniciada'] = true;
-                $_SESSION['nombre'] = $mail;
-                return view('index'); /*FALTA*/
+                $_SESSION['usuario'] = $mail;
+                $inicio = true;
+                return view('index', ['inicio'=>$inicio]);
             }
             else{
                 $ErroresInicio['email'] = 'El usuario o contraseña es incorrecto';
@@ -88,9 +91,18 @@ class ControladorUsuarios extends Controller
         }
     }
 
+    /**------------------------CIERRE DE SESION ---------------------*/
     public function cerrarSesion(){
         session_unset();
         session_destroy();
-        return view('index');
+        $inicio = false;
+        return view('index',['inicio'=>$inicio]);
     }
+
+    /**---------------------MODIFICACION DE USUARIO ----------------*/
+    public function modificar(){
+        /* Mostrar vista para cambiar datos */
+        /**Se podria recuperar datos de la bd para mostrar en el formulario de modificacion*/
+    }
+
 }

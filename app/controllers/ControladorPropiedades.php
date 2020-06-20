@@ -12,24 +12,82 @@ class ControladorPropiedades extends Controller
         $this->model = new Propiedad();
     }
 
-    public function index()
+    /* Busqueda Compras */
+
+    public function compraCasa()
     {
-        $tasks = $this->model->get();
-        return view('tasks', compact('tasks'));
+        $propiedades = $this->model->get('compra','casa'); 
+        return view('busqueda', compact('propiedades'));
     }
 
-    public function create()
+    public function compraDepto()
     {
-        return view('tasks.create');
+        $propiedades = $this->model->get('compra','departamento'); 
+        return view('busqueda', compact('propiedades'));
     }
 
-    public function save()
+    public function compraGalpon()
     {
-        $task = [
-            'description' => $_POST['description'],
-            'completed' => (isset($_POST['completed'])) ? 1 : 0
-        ];
-        $this->model->insert($task);
-        return redirect('tasks');
+        $propiedades = $this->model->get('compra','galpon'); 
+        return view('busqueda', compact('propiedades'));
     }
+
+    public function compraLocal()
+    {
+        $propiedades = $this->model->get('compra','local'); 
+        return view('busqueda', compact('propiedades'));
+    }
+
+    public function compraLote()
+    {
+        $propiedades = $this->model->get('compra','lote');
+        return view('busqueda', compact('propiedades'));
+    }
+
+    /* Busqueda Alquileres */
+
+    public function alquilerCasa()
+    {
+        $propiedades = $this->model->get('alquiler','casa'); 
+        return view('busqueda', compact('propiedades'));
+    }
+
+    public function alquilerDepto()
+    {
+        $propiedades = $this->model->get('alquiler','departamento'); 
+        return view('busqueda', compact('propiedades'));
+    }
+
+    public function alquilerGalpon()
+    {
+        $propiedades = $this->model->get('alquiler','galpon'); 
+        return view('busqueda', compact('propiedades'));
+    }
+
+    public function alquilerLocal()
+    {
+        $propiedades = $this->model->get('alquiler','local'); 
+        return view('busqueda', compact('propiedades'));
+    }
+
+    /*Registro de propiedades*/
+
+    public function registroProp(){
+        return view('nueva.publicacion');
+    }
+
+    public function validarTipos(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(isset($_POST['operacion'])){
+                $operacion = $_POST['operacion'];
+            }
+            if(isset($_POST['propiedad'])){
+                $propiedad = $_POST['propiedad'];
+            }
+
+        return view('publicacion'.'.'.$operacion.'.'.$propiedad.'.create');
+        }
+    }
+
+    
 }

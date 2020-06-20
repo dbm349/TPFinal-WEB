@@ -13,7 +13,7 @@
 
 {% block main %}
     <h2>Nueva propiedad para publicar</h2>
-    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data" name="formulario1">
         <fieldset>
             <legend>Nueva Publicación</legend>
 
@@ -29,9 +29,9 @@
                 <label for="propiedad">Propiedad </label>
                     <select id="propiedad" name="propiedad">
                         <option value="casa">Casa</option>
-                        <option value="departamento">Departamento</option>
+                        <option value="depto">Departamento</option>
                         <option value="lote">Lote</option>
-                        <option value="galpón">Galpón</option>
+                        <option value="galpon">Galpón</option>
                         <option value="local">Local</option>
                         <option value="quinta">Quinta</option>
                         <option value="cochera">Cochera</option>

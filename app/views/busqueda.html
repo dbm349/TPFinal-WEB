@@ -13,7 +13,22 @@
 
 {% block main %}
 <h2>Resultados de Busqueda</h2>
+<!--por el momento para prueba-->
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Direccion</th>
+        </tr> 
+    </thead>
 
-
-
+    <tbody>
+        {% for propiedad in propiedades %}
+        <tr>
+            <td>{{propiedad.direccion}}</td>     
+        </tr>
+        {% else %}
+            <span>No hay resultados en la busqueda</span>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

@@ -1,8 +1,10 @@
+<div class="logo">PROPIEDADESYA</div>
+    
 <nav>
     <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/" class="active">Inicio</a></li>
         <li><a href="/about">Quienes Somos?</a></li>
-        <li><a href="/Comprar">Comprar</a>
+        <li class="sub-menu"><a href="#">Comprar</a>
             <ul>
                 <li><a href="/Comprar/casa">Casa</a></li>
                 <li><a href="/Comprar/depto">Departamento</a></li>
@@ -11,7 +13,7 @@
                 <li><a href="/Comprar/lote">Terreno</a></li>
             </ul>
         </li>
-        <li><a href="/Alquilar">Alquilar</a>
+        <li class="sub-menu"><a href="#">Alquilar</a>
             <ul>
                 <li><a href="/Alquilar/casa">Casa</a></li>
                 <li><a href="/Alquilar/depto">Departamento</a></li>
@@ -19,7 +21,21 @@
                 <li><a href="/Alquilar/local">Local</a></li>
             </ul>
         </li>
+
+        {% if inicio %}
+        <li class="sub-menu"><a href="#">Perfil</a>
+            <ul>
+                <li><a href="/publicacion/registroProp">Ingresar Propiedad</a></li>
+                <li><a href="/users/ModificarDatos">Modificar Datos</a></li>
+                <li><a href="/users/cerrarSesion">Cerrar Sesion</a></li>
+            </ul>
+        </li>
+        {% else %}
         <li><a href="/users">Ingresar</a></li>
         <li><a href="/users/registrarse">Registrarse</a></li>
+        {% endif %}
+            
     </ul>
 </nav>
+
+<div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>

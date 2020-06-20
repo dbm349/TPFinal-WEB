@@ -37,6 +37,15 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function select($table,$to,$tp)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where tipo_operacion = :to AND tipo_propiedad = :tp");
+        $statement->bindValue(':to', $to, PDO::PARAM_STR);
+        $statement->bindValue(':tp', $tp, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
     /**
      * Insert a record into a table.
      *
