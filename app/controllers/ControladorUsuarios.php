@@ -36,7 +36,9 @@ class ControladorUsuarios extends Controller
                 'telefono' => $_POST['tel'],
                 'pass' => md5($_POST['pass'])
             ];
-            $this->model->insert($usuario); /*FALTA VALIDAR SI YA EXISTE EL MAIL DE USUARIO EN LA BASE DE DATOS*/
+            /*FALTA VALIDAR SI YA EXISTE EL MAIL DE USUARIO EN LA BASE DE DATOS*/
+            $this->model->insert($usuario); 
+            /**HABRIA QUE INCORPORAR LOGS */
             return view('usuario.ingresar');
         }else{
             return view('usuario.create', [
@@ -46,8 +48,7 @@ class ControladorUsuarios extends Controller
                                             'mail' => $_POST['email'],
                                             'telefono' => $_POST['tel']
             ]);
-        }
-        
+        }    
     }
 
     /**---------------INICIO DE SESION ---------------*/
@@ -75,6 +76,8 @@ class ControladorUsuarios extends Controller
             if($existe){
                 session_start();
                 $_SESSION['usuario'] = $mail;
+                $_SESSION['pass'] = $pass;
+                $_SESSION['iniciado'] = true;
                 $inicio = true;
                 return view('index', ['inicio'=>$inicio]);
             }
@@ -93,6 +96,7 @@ class ControladorUsuarios extends Controller
 
     /**------------------------CIERRE DE SESION ---------------------*/
     public function cerrarSesion(){
+        session_start();
         session_unset();
         session_destroy();
         $inicio = false;
@@ -101,8 +105,83 @@ class ControladorUsuarios extends Controller
 
     /**---------------------MODIFICACION DE USUARIO ----------------*/
     public function modificar(){
+        session_start();
+        $user = [
+            'mail' => $_SESSION['usuario'],
+            'pass' => $_SESSION['pass']
+        ];
+
+        $datosUser = $this->model->GetUsuario($user);
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('usuario.modificacion',['inicio'=>$inicio,'user'=>$datosUser[0]]);
         /* Mostrar vista para cambiar datos */
         /**Se podria recuperar datos de la bd para mostrar en el formulario de modificacion*/
+    }
+
+    public function update(){
+        session_start();
+        $_SESSION['iniciado'] = true;
+        $inicio = true;
+
+        $Errores =  array();
+        require 'app/controllers/ValidateUsuarioNuevo.php';
+
+        if (empty($Errores)){
+
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $mail = $_POST['email'];
+            $telefono = $_POST['tel'];
+            $pass = md5($_POST['pass']);
+            $usuario = [
+                'nombre' =>  $nombre,
+                'apellido' => $apellido,
+                'mail' => $mail,
+                'telefono' => $telefono,
+                'pass' => $pass,
+                'mailSession' => $_SESSION['usuario'],
+                'passSession' => $_SESSION['pass']
+            ];
+
+            $this->model->UpdateUsuario($usuario);
+            $_SESSION['usuario'] = $mail;
+            $_SESSION['pass'] = $pass;
+
+            /**Actualizo  usuarioM para buscar los datos nuevos*/
+            $usuarioM = [
+                'mail' => $_SESSION['usuario'],
+                'pass' => $_SESSION['pass']
+            ];
+            $datosUser = $this->model->GetUsuario($usuarioM);
+            return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser[0]]);
+        }else{
+            $usuarioM = [
+                'mail' => $_SESSION['usuario'],
+                'pass' => $_SESSION['pass']
+            ];
+            $datosUser = $this->model->GetUsuario($usuarioM);
+            return view('usuario.modificacion', [
+                                            'errores'=> $Errores,
+                                            'inicio' => $inicio,
+                                            'user' => $datosUser
+            ]);
+        }
+
+    }
+
+    public function vistaDatos(){
+        session_start();
+        $usuario = [
+            'mail' => $_SESSION['usuario'],
+            'pass' => $_SESSION['pass']
+        ];
+        $inicio = true;
+        $datosUser = $this->model->GetUsuario($usuario);
+        return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser[0]]);
     }
 
 }

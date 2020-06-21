@@ -22,4 +22,14 @@ class Users extends Model
     {
         return $this->db->buscarUser($this->table, $user);
     }
+
+    public function GetUsuario(array $user)
+    {
+        return $this->db->GetUser($this->table, $user);
+    }
+
+    public function UpdateUsuario(array $user)
+    {
+       $this->db->UpdateUser($this->table,$user);
+    }
 }

@@ -9,7 +9,13 @@ class PagesController
      */
     public function home()
     {
-        return view('index');
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('index',['inicio'=>$inicio]);
     }
 
     /**
@@ -17,16 +23,12 @@ class PagesController
      */
     public function about()
     {
-        $company = 'Laracasts';
-
-        return view('about', ['company' => $company]);
-    }
-
-    /**
-     * Show the contact page.
-     */
-    public function contact()
-    {
-        return view('contact');
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('about',['inicio'=>$inicio]);
     }
 }

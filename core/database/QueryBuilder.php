@@ -76,13 +76,42 @@ class QueryBuilder
 
         $statement = $this->pdo->prepare("select * from {$table} where mail='{$parameters['mail']}' and pass='{$parameters['pass']}' ");
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        $statement->fetchAll(PDO::FETCH_CLASS);
 
         if($statement->rowCount() == 1){
             return true;
         }else{
             return false;
         }
+    }
+
+    public function GetUser($table, $parameters)
+    {
+        $parameters = $this->cleanParameterName($parameters);
+
+        $statement = $this->pdo->prepare("select * from {$table} where mail= :mail and pass= :pass ");
+        $statement->bindValue(':mail', $parameters['mail'], PDO::PARAM_STR);
+        $statement->bindValue(':pass', $parameters['pass'], PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function UpdateUser($table,$parameters){
+        $parameters = $this->cleanParameterName($parameters);
+        $statement = $this->pdo->prepare("update {$table} set nombre=:nombre,
+                                                                apellido=:apellido,
+                                                                telefono=:telefono,
+                                                                pass=:newpass where mail= :mail and pass= :pass ");
+
+        $statement->bindValue(':mail', $parameters['mail'], PDO::PARAM_STR);
+        $statement->bindValue(':pass', $parameters['pass'], PDO::PARAM_STR);
+
+        $statement->bindValue(':nombre', $parameters['nombre'], PDO::PARAM_STR);
+        $statement->bindValue(':apellido', $parameters['apellido'], PDO::PARAM_STR);
+        $statement->bindValue(':telefono', $parameters['telefono'], PDO::PARAM_STR);
+        $statement->bindValue(':newpass', $parameters['pass'], PDO::PARAM_STR);
+
+        $statement->execute();
     }
 
     private function sendToLog(Exception $e)

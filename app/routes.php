@@ -9,9 +9,13 @@
     $router->post('users/sesion', 'ControladorUsuarios@validarInicioSesion');
     $router->get('users/cerrarSesion', 'ControladorUsuarios@cerrarSesion');
     $router->get('users/ModificarDatos', 'ControladorUsuarios@modificar');
+    $router->post('users/update', 'ControladorUsuarios@update');
+    $router->get('users/datos', 'ControladorUsuarios@vistaDatos');
+    
 
     $router->get('publicacion/registroProp','ControladorPropiedades@registroProp');
     $router->post('publicacion/validate','ControladorPropiedades@validarTipos');
+    $router->post('/busqueda','ControladorPropiedades@busquedaIndex');
     
     
     $router->get('Comprar/casa', 'ControladorPropiedades@compraCasa');

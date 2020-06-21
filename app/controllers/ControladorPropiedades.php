@@ -12,36 +12,71 @@ class ControladorPropiedades extends Controller
         $this->model = new Propiedad();
     }
 
+    /**Busqueda Pagina Principal */
+    public function busquedaIndex(){
+        
+    }
+
     /* Busqueda Compras */
 
     public function compraCasa()
     {
         $propiedades = $this->model->get('compra','casa'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraDepto()
     {
         $propiedades = $this->model->get('compra','departamento'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraGalpon()
     {
         $propiedades = $this->model->get('compra','galpon'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraLocal()
     {
         $propiedades = $this->model->get('compra','local'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraLote()
     {
         $propiedades = $this->model->get('compra','lote');
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     /* Busqueda Alquileres */
@@ -49,31 +84,61 @@ class ControladorPropiedades extends Controller
     public function alquilerCasa()
     {
         $propiedades = $this->model->get('alquiler','casa'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerDepto()
     {
         $propiedades = $this->model->get('alquiler','departamento'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerGalpon()
     {
         $propiedades = $this->model->get('alquiler','galpon'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerLocal()
     {
         $propiedades = $this->model->get('alquiler','local'); 
-        return view('busqueda', compact('propiedades'));
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     /*Registro de propiedades*/
 
     public function registroProp(){
-        return view('nueva.publicacion');
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('nueva.publicacion',['inicio'=>$inicio]);
     }
 
     public function validarTipos(){
@@ -85,7 +150,13 @@ class ControladorPropiedades extends Controller
                 $propiedad = $_POST['propiedad'];
             }
 
-        return view('publicacion'.'.'.$operacion.'.'.$propiedad.'.create');
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('publicacion'.'.'.$operacion.'.'.$propiedad.'.create',['inicio'=>$inicio]);
         }
     }
 
