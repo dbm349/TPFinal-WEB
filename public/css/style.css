@@ -16,6 +16,9 @@ body{
     background-position: center;
 }
 
+h1{
+    padding-top: 5%;
+}
 /*-------------HEADER--------------*/
 
 header {
@@ -27,6 +30,7 @@ header {
     background: #262626;
     width: 100%;
     box-sizing: border-box;
+
 }
 
 header .logo{
