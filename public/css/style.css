@@ -212,6 +212,37 @@ img{
     padding-right:30%;
 }
 
+/*----------------------------VISTA ABOUT-----------------------*/
+
+    #about{
+        padding-top: 8%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    h2{
+        margin-top: 5%;
+        text-align: center;
+    }
+
+/*------------------------VISTA DE REGISTRO DE USUARIO----------------*/
+
+
+    #registroUser{
+        margin-top: 18%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+    }
+
+/*-----------------------VISTA DE LOGIN DE USUARIO----------------------*/
+
+    #loginUser{
+        margin-top: 18%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;  
+    }
 
 /*----------------------RESPONSIVE---------------------*/
 
@@ -306,4 +337,8 @@ img{
        max-width: 100%;
        background-size: 100% 100%; 
     }
+
+
+
+
 }
