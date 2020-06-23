@@ -14,7 +14,8 @@
     
 
     $router->get('publicacion/registroProp','ControladorPropiedades@registroProp');
-    $router->post('publicacion/validate','ControladorPropiedades@validarTipos');
+    $router->post('publicacion/validateTipo','ControladorPropiedades@validarTipos');
+    $router->post('publicacion/validate','ControladorPropiedades@validarPropiedad');
     $router->post('/busqueda','ControladorPropiedades@busquedaIndex');
     
     

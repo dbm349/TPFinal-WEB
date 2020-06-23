@@ -5,6 +5,7 @@ CREATE TABLE propiedades (
     tipo_operacion TEXT NOT NULL,
     tipo_propiedad TEXT NOT NULL,
     direccion text NOT NULL,
+    localidad text NOT NULL,
     supTotal INTEGER,
     supCub INTEGER,
     piso INTEGER,

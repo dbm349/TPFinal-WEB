@@ -160,5 +160,16 @@ class ControladorPropiedades extends Controller
         }
     }
 
+    public function validarPropiedad(){
+        $ErroresProp =  array();
+        require 'app/controllers/ValidatePropiedad.php';
+
+        if (empty($ErroresProp)){
+
+        }else{
+            /*$operacion;
+            return view()*/
+        }
+    }
     
 }

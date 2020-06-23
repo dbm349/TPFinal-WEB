@@ -24,6 +24,12 @@
             </article>
 
             <article>
+                <label for="localidad">Localidad </label>
+                <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+                *
+            </article>
+
+            <article>
                 <label for="supTotal">Sup.Total </label>
                 <input type="number" id="supTotal" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
             </article>
@@ -105,8 +111,8 @@
             </article>
 
             <article>
-                <label>Fotos</label>
-                <input type="file" name="fotos" accept=".jpg,.png">
+                <label for="fotos">Fotos</label>
+                <input type="file" id="fotos" name="fotos" accept=".jpg,.png" multiple>
             </article>
 
             <article>

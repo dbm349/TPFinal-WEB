@@ -12,11 +12,12 @@
 {% endblock %}
 
 {% block main %}
-    <h1>Buscá tu hogar</h1>
+<div id="busquedaindex">
     <form action="/busqueda" method="POST" enctype="multipart/form-data">
         <fieldset>
+            <h1>Propiedades en venta y alquiler</h1>
             <article>
-                <input type="text" id="ubicacion" name="ubicacion" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ubicacion">
+                <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad">
             </article>
 
             <article>
@@ -45,15 +46,6 @@
             </article>
         </fieldset>
     </form>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolorum a soluta in laudantium. Illo ad excepturi soluta. Laboriosam, unde voluptatum. Blanditiis ducimus qui id consectetur officia nisi. Necessitatibus, ipsam?</p>
+</div>
 {% endblock %}
 
