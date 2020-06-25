@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\Propiedad;
+use App\Models\Users;
 
 class ControladorPropiedades extends Controller
 {
@@ -12,11 +13,12 @@ class ControladorPropiedades extends Controller
         $this->model = new Propiedad();
     }
 
-    /**Busqueda Pagina Principal */
+    /**---------------Busqueda Pagina Principal ---------------*/
     public function busquedaIndex(){
         
     }
 
+    /**---------------Busqueda Nav--------------- */
     /* Busqueda Compras */
 
     public function compraCasa()
@@ -58,18 +60,6 @@ class ControladorPropiedades extends Controller
     public function compraLocal()
     {
         $propiedades = $this->model->get('compra','local'); 
-        session_start() ;
-        if(isset($_SESSION['iniciado'])){
-            $inicio = true;
-        }else{
-            $inicio=false;
-        }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
-    }
-
-    public function compraLote()
-    {
-        $propiedades = $this->model->get('compra','lote');
         session_start() ;
         if(isset($_SESSION['iniciado'])){
             $inicio = true;
@@ -129,7 +119,7 @@ class ControladorPropiedades extends Controller
         return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
-    /*Registro de propiedades*/
+    /*---------------Registro de propiedades---------------*/
 
     public function registroProp(){
         session_start() ;
@@ -156,19 +146,38 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('publicacion'.'.'.$operacion.'.'.$propiedad.'.create',['inicio'=>$inicio]);
+        return view('publicacion.'.$operacion.'.'.$propiedad.'.create',['inicio'=>$inicio,'operacion'=>$operacion,'propiedad'=>$propiedad]);
         }
     }
 
-    public function validarPropiedad(){
-        $ErroresProp =  array();
-        require 'app/controllers/ValidatePropiedad.php';
-
-        if (empty($ErroresProp)){
-
+    public function InsertarPropiedad(){
+        session_start();
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
         }else{
-            /*$operacion;
-            return view()*/
+            $inicio=false;
+        }
+
+        $user = [
+            'mail' => $_SESSION['usuario'],
+            'pass' => $_SESSION['pass']
+        ];
+    
+        $ErroresProp =  array();
+        $propiedad = array();
+        $propiedad['mail'] = $_SESSION['usuario'];
+        require 'app/controllers/ValidatePropiedad.php';
+        
+
+        if(empty($ErroresProp)){
+            
+            $this->model->insert($propiedad);
+            //print_r($propiedad);
+            return view('propiedad.datos',['inicio'=>$inicio, 'propiedad'=>$propiedad]);
+           
+        }else{
+            return view('about',['inicio'=>$inicio,'errores'=>$ErroresProp]);
+            
         }
     }
     

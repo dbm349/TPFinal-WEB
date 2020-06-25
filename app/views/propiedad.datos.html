@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Datos Propiedad{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Propiedad Publicada correctamente</h2>
+<section>
+    <dl>
+        <dt>Tipo Operacion:</dt><dl>{{propiedad.tipo_operacion}}</dl>
+        <dt>Categoria Propiedad:</dt><dl>{{propiedad.tipo_propiedad}}</dl>
+        <dt>Direccion:</dt><dl>{{propiedad.direccion}}</dl>
+        <dt>Localidad:</dt><dl>{{propiedad.localidad}}</dl>
+
+        {% if propiedad.supTotal is not empty %}
+            <dt>Superficie Total:</dt><dl>{{propiedad.supTotal}}</dl>
+        {% endif %}
+
+        {% if propiedad.supCub is not empty %}
+        <dt>Superficie Cubierta:</dt><dl>{{propiedad.supCub}}</dl>
+        {% endif %}
+
+        {% if propiedad.piso is not empty %}
+        <dt>Piso:</dt><dl>{{propiedad.piso}}</dl>
+        {% endif %}
+
+        {% if propiedad.ambientes is not empty %}
+        <dt>Ambientes:</dt><dl>{{propiedad.ambientes}}</dl>
+        {% endif %}
+
+        {% if propiedad.dormitorios is not empty %}
+        <dt>Dormitorios:</dt><dl>{{propiedad.dormitorios}}</dl>
+        {% endif %}
+
+        {% if propiedad.baños is not empty %}
+        <dt>Baños:</dt><dl>{{propiedad.baños}}</dl>
+        {% endif %}
+
+        {% if propiedad.patio is not empty %}
+        <dt>Patio:</dt><dl>{{propiedad.patio}}</dl>
+        {% endif %}
+
+        {% if propiedad.piscina is not empty %} 
+        <dt>Piscina:</dt><dl>{{propiedad.piscina}}</dl>
+        {% endif %}
+
+        {% if propiedad.garage is not empty %}
+        <dt>Garage:</dt><dl>{{propiedad.garage}}</dl>
+        {% endif %}
+
+        {% if propiedad.parrilla is not empty %}
+        <dt>Parrilla:</dt><dl>{{propiedad.parrilla}}</dl>
+        {% endif %}
+
+        {% if propiedad.quincho is not empty %}
+        <dt>Quincho:</dt><dl>{{propiedad.quincho}}</dl>
+        {% endif %}
+
+        {% if propiedad.antiguedad is not empty %}
+        <dt>Antiguedad:</dt><dl>{{propiedad.antiguedad}}</dl>
+        {% endif %}
+
+        {% if propiedad.precio is not empty %}
+        <dt>Precio:</dt><dl>{{propiedad.precio}}</dl>
+        {% endif %}
+
+        {% if propiedad.expensas is not empty %}
+        <dt>Expensas:</dt><dl>{{propiedad.expensas}}</dl>
+        {% endif %}
+
+        {% if propiedad.moneda is not empty %}
+        <dt>Moneda:</dt><dl>{{propiedad.moneda}}</dl>
+        {% endif %}
+
+        {% if propiedad.descripcion is not empty %}
+        <dt>Descripcion:</dt><dl>{{propiedad.descripcion}}</dl>
+        {% endif %}
+    </dl>
+
+    <a href="/publicacion/registroProp">Ingresar Otra Propiedad</a>
+    <a href="/">Volver a la pantalla inicial</a>
+
+</section>
+{% endblock %}

@@ -13,72 +13,68 @@
 
 {% block main %}
     <h2>Nueva Publicación</h2>
-    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+    <form action="/publicacion/insert" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Datos de la propiedad</legend>
+            
+            <input type="text" id="operacion" name="operacion" value={{operacion}} required hidden>
+            <input type="text" id="propiedad" name="propiedad" value={{propiedad}} required hidden>
 
             <article>
                 <label for="direccion">Direccion </label>
-                <input type="text" id="direccion" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
+                <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
                 *
             </article>
 
             <article>
                 <label for="localidad">Localidad </label>
-                <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+                <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
                 *
             </article>
 
             <article>
                 <label for="supTotal">Sup.Total </label>
-                <input type="number" id="supTotal" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
+                <input type="number" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
             </article>
-
 
             <article>
                 <label for="piso">Piso </label>
                 <input type="number" id="piso" name="piso" min="1" max="60" placeholder="Número de piso" value="{{ piso }}" >
             </article>
 
-
             <article>
                 <label for="antiguedad">Antiguedad </label>
-                <input type="number" id="antiguedad" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
+                <input type="number" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
             </article>
-
 
             <article>
                 <label for="precio">Alquiler </label>
-                <input type="number" id="precio" name="precio" placeholder="Precio de venta" value="{{ precio }}" >
+                <input type="number" name="precio" placeholder="Precio de Alquiler" value="{{ precio }}" >
             </article>
-
 
             <article>
                 <label for="expensas">Expensas </label>
                 <input type="number" id="expensas" name="expensas" placeholder="Valor de expensas" value="{{ expensas }}" >
             </article>
 
-
             <article>
                 <label for="moneda">Moneda </label>
-                <input type="radio" id="dolar" name="dolar" value="{{ dolar }}" >
+                <input type="radio" name="moneda" value="dolar" >
                 <label for="dolar">Dolar </label>
-                <input type="radio" id="peso" name="peso" value="{{ peso }}" >
+                <input type="radio" name="moneda" value="peso" >
                 <label for="peso">Peso </label>
             </article>
 
-
             <article>
                 <label>Descripción</label>
-                <textarea name="descripcion" rows="10" cols="40">Puede realizar aquí la descripcion de la propiedad</textarea>
+                <textarea name="descripcion" rows="10" cols="40"></textarea>
             </article>
 
-        
             <article>
-                <label>Fotos</label>
-                <input type="file" name="fotos" accept=".jpg,.png">
+                <label for="fotos">Fotos</label>
+                <input type="file" id="fotos" name="fotos" accept=".jpg,.png" multiple>
             </article>
-
+            
             <article>
                 * <small>Este dato es requerido</small>
             </article>
@@ -89,4 +85,78 @@
             </article>
         </fieldset>
     </form>
+
+    {% if errores is not empty %}
+    <section class="Errores">
+        <p>
+            Campos Erroneos:
+        </p>
+
+        {% if errores['operacion'] %}
+            <p>
+                Operacion: {{ errores['operacion'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['propiedad'] %}
+            <p>
+                Propiedad: {{ errores['propiedad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['direccion'] %}
+            <p>
+                Direccion: {{ errores['direccion'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['localidad'] %}
+            <p>
+                Localidad: {{ errores['localidad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['supTotal'] %}
+            <p>
+                Sup. Total: {{ errores['supTotal'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['piso'] %}
+            <p>
+                Piso: {{ errores['piso'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['antiguedad'] %}
+            <p>
+                Antiguedad: {{ errores['antiguedad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['precio'] %}
+            <p>
+                Precio: {{ errores['precio'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['expensas'] %}
+            <p>
+                Expensas: {{ errores['expensas'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['moneda'] %}
+            <p>
+                Moneda: {{ errores['moneda'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['descripcion'] %}
+            <p>
+                Descripcion: {{ errores['descripcion'] }}
+            </p>
+        {% endif %}
+    </section>
+{% endif %}
 {% endblock %}

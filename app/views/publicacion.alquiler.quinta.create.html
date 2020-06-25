@@ -13,125 +13,108 @@
 
 {% block main %}
     <h2>Nueva Publicación</h2>
-    <form action="/publicacion/validate" method="POST" enctype="multipart/form-data">
+    <form action="/publicacion/insert" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Datos de la propiedad</legend>
 
+            <input type="text" name="operacion" value={{operacion}} required hidden>
+            <input type="text" name="propiedad" value={{propiedad}} required hidden>
+            
             <article>
                 <label for="direccion">Direccion </label>
-                <input type="text" id="direccion" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
+                <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
                 *
             </article>
 
             <article>
                 <label for="localidad">Localidad </label>
-                <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+                <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
                 *
             </article>
 
             <article>
                 <label for="supTotal">Sup.Total </label>
-                <input type="number" id="supTotal" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
+                <input type="number" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
             </article>
-
 
             <article>
                 <label for="supCub">Sup.Cubierta </label>
-                <input type="number" id="supCub" name="supCub" placeholder="Superficie Cubierta" value="{{ supCub }}" >
+                <input type="number" name="supCub" placeholder="Superficie Cubierta" value="{{ supCub }}" >
             </article>
-
 
              <article>
                 <label for="ambientes">Ambientes </label>
-                <input type="number" id="ambientes" name="ambientes" min="1" max="15" placeholder="Cantidad de ambientes" value="{{ ambientes }}" >
+                <input type="number" name="ambientes" min="1" max="15" placeholder="Cantidad de ambientes" value="{{ ambientes }}" >
             </article>
 
             <article>
                 <label for="dormitorios">Dormitorios </label>
-                <input type="number" id="dormitorios" name="dormitorios" min="1" max="20" placeholder="Cantidad de dormitorios" value="{{ dormitorios }}" >
+                <input type="number" name="dormitorios" min="1" max="20" placeholder="Cantidad de dormitorios" value="{{ dormitorios }}" >
             </article>
 
             <article>
                 <label for="baños">Baños </label>
-                <input type="number" id="baños" name="baños" min="1" max="15" placeholder="Cantidad de baños" value="{{ baños }}" >
+                <input type="number" name="banios" min="1" max="5" placeholder="Cantidad de baños" value="{{ baños }}" >
             </article>
-
-
-            <article>
-                <label for="parque">Parque </label>
-                <input type="radio" id="parqueSi" name="parqueSi" value="{{ si }}" >
-                <label for="si">Si </label>
-                <input type="radio" id="parqueNo" name="parqueNo" value="{{ no }}" >
-                <label for="no">No </label>
-            </article>
-
 
             <article>
                 <label for="piscina">Piscina </label>
-                <input type="radio" id="piscinaSi" name="piscinaSi" value="{{ si }}" >
+                <input type="radio" name="piscina" value="si" >
                 <label for="si">Si </label>
-                <input type="radio" id="piscinaNo" name="piscinaNo" value="{{ no }}" >
+                <input type="radio" name="piscina" value="no" >
                 <label for="no">No </label>
             </article>
 
-            
             <article>
                 <label for="quincho">Quincho</label>
-                <input type="radio" id="quinchoSi" name="quinchoSi" value="{{ si }}" >
+                <input type="radio" name="quincho" value="si" >
                 <label for="si">Si </label>
-                <input type="radio" id="quinchoNo" name="quinchoNo" value="{{ no }}" >
+                <input type="radio" name="quincho" value="no" >
                 <label for="no">No </label>
             </article>
-
 
             <article>
                 <label for="garage">Garage </label>
-                <input type="radio" id="garageSi" name="garageSi" value="{{ si }}" >
+                <input type="radio" name="garage" value="si" >
                 <label for="si">Si </label>
-                <input type="radio" id="garageNo" name="garageNo" value="{{ no }}" >
+                <input type="radio" name="garage" value="no" >
                 <label for="no">No </label>
             </article>
-
 
             <article>
                 <label for="parrilla">Parrilla </label>
-                <input type="radio" id="parrillaSi" name="parrillaSi" value="{{ si }}" >
+                <input type="radio" name="parrilla" value="si" >
                 <label for="si">Si </label>
-                <input type="radio" id="parrillaNo" name="parrillaNo" value="{{ no }}" >
+                <input type="radio" name="parrilla" value="no" >
                 <label for="no">No </label>
             </article>
 
-
             <article>
                 <label for="antiguedad">Antiguedad </label>
-                <input type="number" id="antiguedad" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
+                <input type="number" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
             </article>
-
 
             <article>
                 <label for="precio">Alquiler </label>
-                <input type="number" id="precio" name="precio" placeholder="Precio de venta" value="{{ precio }}" >
+                <input type="number" name="precio" placeholder="Precio de Alquiler" value="{{ precio }}" >
             </article>
-
 
             <article>
                 <label for="moneda">Moneda </label>
-                <input type="radio" id="dolar" name="dolar" value="{{ dolar }}" >
+                <input type="radio" name="moneda" value="dolar" >
                 <label for="dolar">Dolar </label>
-                <input type="radio" id="peso" name="peso" value="{{ peso }}" >
+                <input type="radio" name="moneda" value="peso" >
                 <label for="peso">Peso </label>
             </article>
 
-
             <article>
                 <label>Descripción</label>
-                <textarea name="descripcion" rows="10" cols="40">Puede realizar aquí la descripcion de la propiedad</textarea>
+                <textarea name="descripcion" rows="10" cols="40"></textarea>
             </article>
 
-        
             <article>
-                <label>Fotos</label>
-                <input type="file" name="fotos" accept=".jpg,.png">
+                <label for="fotos">Fotos</label>
+                <input type="file" id="fotos" name="fotos" accept=".jpg,.png" multiple>
             </article>
 
             <article>
@@ -144,4 +127,114 @@
             </article>
         </fieldset>
     </form>
+    
+    {% if errores is not empty %}
+    <section class="Errores">
+        <p>
+            Campos Erroneos:
+        </p>
+
+        {% if errores['operacion'] %}
+            <p>
+                Operacion: {{ errores['operacion'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['propiedad'] %}
+            <p>
+                Propiedad: {{ errores['propiedad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['direccion'] %}
+            <p>
+                Direccion: {{ errores['direccion'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['localidad'] %}
+            <p>
+                Localidad: {{ errores['localidad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['supTotal'] %}
+            <p>
+                Sup. Total: {{ errores['supTotal'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['supCub'] %}
+            <p>
+                Sup Cubierta: {{ errores['supCub'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['ambientes'] %}
+            <p>
+                Ambientes: {{ errores['ambientes'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['dormitorios'] %}
+            <p>
+                Dormitorios: {{ errores['dormitorios'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['baños'] %}
+            <p>
+                Baños: {{ errores['baños'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['piscina'] %}
+            <p>
+                Piscina: {{ errores['piscina'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['quincho'] %}
+            <p>
+                Quincho: {{ errores['quincho'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['garage'] %}
+            <p>
+                Garage: {{ errores['garage'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['parrilla'] %}
+            <p>
+                Parrilla: {{ errores['parrilla'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['antiguedad'] %}
+            <p>
+                Antiguedad: {{ errores['antiguedad'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['precio'] %}
+            <p>
+                Precio: {{ errores['precio'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['moneda'] %}
+            <p>
+                Moneda: {{ errores['moneda'] }}
+            </p>
+        {% endif %}
+
+        {% if errores['descripcion'] %}
+            <p>
+                Descripcion: {{ errores['descripcion'] }}
+            </p>
+        {% endif %}
+    </section>
+{% endif %}
 {% endblock %}
