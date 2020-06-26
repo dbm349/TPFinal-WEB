@@ -23,7 +23,7 @@ class ControladorPropiedades extends Controller
 
     public function compraCasa()
     {
-        $propiedades = $this->model->get('compra','casa'); 
+        $propiedades = $this->model->get('venta','casa'); 
         session_start() ;
         if(isset($_SESSION['iniciado'])){
             $inicio = true;
@@ -35,7 +35,7 @@ class ControladorPropiedades extends Controller
 
     public function compraDepto()
     {
-        $propiedades = $this->model->get('compra','departamento'); 
+        $propiedades = $this->model->get('venta','departamento'); 
         session_start() ;
         if(isset($_SESSION['iniciado'])){
             $inicio = true;
@@ -47,7 +47,7 @@ class ControladorPropiedades extends Controller
 
     public function compraGalpon()
     {
-        $propiedades = $this->model->get('compra','galpon'); 
+        $propiedades = $this->model->get('venta','galpon'); 
         session_start() ;
         if(isset($_SESSION['iniciado'])){
             $inicio = true;
@@ -59,7 +59,7 @@ class ControladorPropiedades extends Controller
 
     public function compraLocal()
     {
-        $propiedades = $this->model->get('compra','local'); 
+        $propiedades = $this->model->get('venta','local'); 
         session_start() ;
         if(isset($_SESSION['iniciado'])){
             $inicio = true;
