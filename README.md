@@ -14,4 +14,6 @@ el alquiler del mismo se realiza de manera externa.
 
 [Ver Entrega1](https://github.com/dbm349/TPFinal-WEB/tree/master/Entrega1)
 
+[Ver Entrega2](https://github.com/dbm349/TPFinal-WEB/tree/master/Entrega2)
+
 
