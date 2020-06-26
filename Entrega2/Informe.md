@@ -14,3 +14,5 @@ Actualmente estamos trabajando en la paginacion para mostrar los resultados a la
 
 ## Expectativa de entrega
 Nuestra expectativa es entregar el proyecto para la Regularizacion de la materia (60%), para poder terminarlo posteriormente y presentarlo completo en una instancia de final.
+
+[Regresar](Entrega2.md)
