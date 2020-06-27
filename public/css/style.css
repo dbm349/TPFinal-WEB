@@ -244,6 +244,23 @@ img{
         text-align: center;  
     }
 
+
+/*-----------------------VISTA MOFIDICAR DATOS DE USUARIO USUARIO----------------------*/
+
+    #vistaModificar{
+        margin-top: 18%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+        font-size: 120%;
+        font-weight: bold;
+    }
+
+    #vistaModificar legend{
+        margin-bottom: 2%;
+    }
+
+
 /*----------------------RESPONSIVE---------------------*/
 
 @media screen and (max-width: 900px){
