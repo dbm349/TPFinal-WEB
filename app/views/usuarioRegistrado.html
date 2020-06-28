@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+    <h1 id="usuarioRegistrado">¡Registro exitoso!</h1>
+    <svg id="check" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+    
+    {% if erroresInicio is not empty %}
+       
+    {% endif %}
+{% endblock %}

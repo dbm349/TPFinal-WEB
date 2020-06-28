@@ -14,7 +14,7 @@
 {% block main %}
     <h2>Nueva propiedad para publicar</h2>
     <form action="/publicacion/validateTipo" method="POST" enctype="multipart/form-data" name="formulario1">
-        <fieldset>
+        <fieldset id="nuevaPublicacion">
             <legend>Nueva Publicación</legend>
 
             <article>
@@ -37,8 +37,8 @@
                     </select>
             </article>
 
-            <article>
-                <input type="submit" name="submit" value="Enviar">
+            <article class="boton">
+                <input type="submit" name="submit" value="Enviar" style ="height: 40px; width: 80px;">
             </article>
         </fieldset>
     </form>

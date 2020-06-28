@@ -116,16 +116,11 @@ header nav ul li a.active{
 
 
 /*---------------------IMAGENES DE PORTADA-----------------*/
-*{
-	padding:0%;
-	margin: 0%;
-	outline: 0%;
-	box-sizing: border-box;
-}
 
 #slideshow-principal{
 	position: relative;
 	overflow: hidden;
+    margin-bottom: 1%;
 }
 
 #progress-bar-container{
@@ -288,6 +283,81 @@ img{
     border-color: 2px black solid;
 }
     
+/*-------------------------VISTA NUEVA PUBLICACION------------*/
+    #nuevaPublicacion{
+        margin-top: 8%;
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+        font-size: 120%;
+        font-weight: bold;
+    }
+
+    #nuevaPublicacion legend{
+        margin-bottom: 2%;
+    }
+
+
+/*--------------------DATOS INCORRECTOS------------------------*/
+    
+    #datosIncorrectos{
+        text-align: center;
+        font-style: oblique;
+        font-weight: bold;
+        background-color: red;
+        margin-top: 1%;
+    }
+
+/*--------------------------- VISTA CERRAR SESION-------------------------*/
+
+    #fueraSesion{
+        text-align: center;
+
+    }
+
+    #candado{
+         display:block;
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 2%;
+         width: 20%;
+         height: 20%;
+    }
+
+/*---------------------VISTA LUEGO DEL REGISTRO DE USUARIO-------------*/
+    
+    #usuarioRegistrado{
+        text-align: center;
+        font-size: 50px;
+
+    }
+
+    #check{
+         display:block;
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 2%;
+         width: 20%;
+         height: 20%;
+    }
+
+/*---------------------VISTA LUEGO DE INICIO DE SESIÓN-------------*/
+    
+    #iniSesion{
+        text-align: center;
+        font-size: 50px;
+
+    }
+
+    #candadoAbierto{
+         display:block;
+         margin-left: auto;
+         margin-right: auto;
+         margin-top: 2%;
+         width: 20%;
+         height: 20%;
+    }
+
 
 /*----------------------RESPONSIVE---------------------*/
 

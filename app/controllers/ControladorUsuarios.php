@@ -39,7 +39,7 @@ class ControladorUsuarios extends Controller
             /*FALTA VALIDAR SI YA EXISTE EL MAIL DE USUARIO EN LA BASE DE DATOS*/
             $this->model->insert($usuario); 
             /**HABRIA QUE INCORPORAR LOGS */
-            return view('usuario.ingresar');
+            return view('usuarioRegistrado');
         }else{
             return view('usuario.create', [
                                             'errores'=> $Errores,
@@ -79,7 +79,7 @@ class ControladorUsuarios extends Controller
                 $_SESSION['pass'] = $pass;
                 $_SESSION['iniciado'] = true;
                 $inicio = true;
-                return view('index', ['inicio'=>$inicio]);
+                return view('sesionIniciada', ['inicio'=>$inicio]);
             }
             else{
                 $ErroresInicio['email'] = 'El usuario o contraseña es incorrecto';
@@ -100,7 +100,7 @@ class ControladorUsuarios extends Controller
         session_unset();
         session_destroy();
         $inicio = false;
-        return view('index',['inicio'=>$inicio]);
+        return view('sesionCerrada',['inicio'=>$inicio]);
     }
 
     /**---------------------MODIFICACION DE USUARIO ----------------*/

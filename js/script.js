@@ -19,6 +19,7 @@ addEventListener('DOMContentLoaded', () => {
 
 				}
 
+
 				progressBar.style.width = '${porcentaje_base}%'
 				img1.src = imagenes[0]
 				const circulos = document.querySelectorAll('.circles')
