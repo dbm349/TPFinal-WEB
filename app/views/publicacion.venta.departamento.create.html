@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Nueva publicación: VENTA DE DEPARTAMENTO{% endblock %}
+{% block title %}Nueva publicación{% endblock %}
 
 {% block header %}
     {{ include('partials/nav.html') }}
@@ -12,30 +12,27 @@
 {% endblock %}
 
 {% block main %}
-    <h2>Nueva Publicación</h2>
-    <form action="/publicacion/insert" method="POST" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Datos de la propiedad</legend>
+    <h2>Nueva Publicación -  VENTA DE DEPARTAMENTO</h2>
+    <form action="/publicacion/insert" method="POST" enctype="multipart/form-data" class="formulario">
+        
+            <h3>Datos de la propiedad</h3>
 
             <input type="text" name="operacion" value={{operacion}} required hidden>
             <input type="text" name="propiedad" value={{propiedad}} required hidden>
             
-            <article>
-                <label for="direccion">Direccion </label>
+            <article id="publi">
+                <label for="direccion">Dirección *</label>
                 <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
-                *
             </article>
 
-            <article>
-                <label for="localidad">Localidad </label>
+            <article id="publi">
+                <label for="localidad">Localidad *</label>
                 <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
-                *
             </article>
 
-            <article>
-                <label for="provincia">Provincia </label>
+            <article id="publi">
+                <label for="provincia">Provincia *</label>
                 <input type="text" name="provincia" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Provincia" value="{{ provincia }}" required>
-                *
             </article>
 
             <article>
@@ -100,8 +97,7 @@
             </article>
 
             <article>
-                <label>Descripción</label>
-                <textarea name="descripcion" rows="10" cols="40"></textarea>
+                <textarea name="descripcion" rows="10" cols="40" placeholder="Agregue una descripción aquí"></textarea>
             </article>
 
             <article>
@@ -110,14 +106,14 @@
             </article>
 
             <article>
-                * <small>Este dato es requerido</small>
+                <input type="submit" name="submit" value="Enviar">
+                <input type="reset" name="limpiar" value="Limpiar">
             </article>
 
             <article>
-                <input type="reset" name="limpiar" value="limpiar">
-                <input type="submit" name="submit" value="Enviar">
+                * <small>Este dato es requerido</small>
             </article>
-        </fieldset>
+    
     </form>
 
     {% if errores is not empty %}
