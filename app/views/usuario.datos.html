@@ -12,14 +12,24 @@
 {% endblock %}
 
 {% block main %}
-<h2>Datos Personales</h2>
-<section>
-    <dl>
-        <dt>Nombre:</dt><dl>{{user.nombre}}</dl>
-        <dt>Apellido:</dt><dl>{{user.apellido}}</dl>
-        <dt>Email:</dt><dl>{{user.mail}}</dl>
-        <dt>Telefono:</dt><dl>{{user.telefono}}</dl>
-    </dl>
+<h2 id="datos">Datos Personales</h2>
+<table id="t01">
+    <thead>
+    	<tr>
+    		<th>Nombre</th>
+    		<th>Apellido</th> 
+   			<th>Email</th>
+   			<th>Teléfono</th>
+  		</tr>
 
-</section>
+  		<tr>
+    		<td>{{user.nombre}}</td>
+    		<td>{{user.apellido}}</td>
+    		<td>{{user.mail}}</td>
+    		<td>{{user.telefono}}</td>
+  		</tr>
+    	
+    </thead>
+        
+</table>
 {% endblock %}
