@@ -14,7 +14,7 @@
 {% block main %}
     <h2>Nueva Publicación - ALQUILER DE DEPARTAMENTO</h2>
     <form action="/publicacion/insert" method="POST" enctype="multipart/form-data" class="formulario">
-        <fieldset>
+        
             <h3>Datos de la propiedad</h3>
 
             <input type="text" name="operacion" value={{operacion}} required hidden>
@@ -28,13 +28,11 @@
             <article id="publi">
                 <label for="localidad">Localidad *</label>
                 <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
-                *
             </article>
 
-            <article>
-                <label for="provincia">Provincia </label>
+            <article id="publi">
+                <label for="provincia">Provincia *</label>
                 <input type="text" name="provincia" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Provincia" value="{{ provincia }}" required>
-                *
             </article>
 
             <article>
