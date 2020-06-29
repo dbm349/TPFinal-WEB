@@ -232,7 +232,18 @@ class ControladorPropiedades extends Controller
     /*-----------VER------------- */
 
     public function verProp(){
-        $propiedad = $_GET['direccion'];
-        print_r($propiedad);
+        session_start();
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+
+        //Busco por ID la propiedad seleccionada
+        $id = $_GET['id'];
+        $propiedad = array();
+        $propiedad = $this->model->getByID($id);
+        
+        return view('propiedad.detalles',['inicio'=>$inicio,'propiedad'=>$propiedad]);
     }
 }

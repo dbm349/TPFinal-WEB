@@ -13,6 +13,11 @@ class Propiedad extends Model
         return $this->db->select($this->table,$to,$tp);
     }
 
+    public function getByID($propID)
+    {
+        return $this->db->selectPropId($this->table,$propID);
+    }
+
     public function insert(array $propiedad)
     {
         $this->db->insert($this->table, $propiedad);

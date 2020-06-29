@@ -46,6 +46,14 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectPropId($table,$parameter)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where id_p = :id");
+        $statement->bindValue(':id', $parameter, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     /**
      * Insert a record into a table.
      *
@@ -74,7 +82,9 @@ class QueryBuilder
     {
         $parameters = $this->cleanParameterName($parameters);
 
-        $statement = $this->pdo->prepare("select * from {$table} where mail='{$parameters['mail']}' and pass='{$parameters['pass']}' ");
+        $statement = $this->pdo->prepare("select * from {$table} where mail= :mail and pass= :pass ");
+        $statement->bindValue(':mail', $parameters['mail'], PDO::PARAM_STR);
+        $statement->bindValue(':pass', $parameters['pass'], PDO::PARAM_STR);
         $statement->execute();
         $statement->fetchAll(PDO::FETCH_CLASS);
 
