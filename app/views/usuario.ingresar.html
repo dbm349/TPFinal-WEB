@@ -12,26 +12,20 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/users/sesion" method="POST" enctype="multipart/form-data">
-        <fieldset id="loginUser">
-            <legend>Inicio Sesion</legend>
-
+    <form action="/users/sesion" method="POST" enctype="multipart/form-data" class="formulario">
+        <h2>INICIAR SESIÓN</h2>
             <article>
-                <label for="email">Email </label>
-                <input type="email" id="email" name="email" placeholder="Ingrese su email" value="{{ mail }}" required>
-                *
+                <input class="entrada" type="email" id="email" name="email" placeholder="&#128100; Email" value="{{ mail }}" required>
             </article>
 
             <article>
-                <label for="pass">Contraseña </label>
-                <input type="password" id="pass" name="pass" pattern=".{8,50}" required>
-                *
+                <input class="entrada" type="password" id="pass" name="pass" pattern=".{8,50}" placeholder="&#128273; Contraseña" required>        
             </article>
 
-            <article class="boton">
-                <input type="submit" name="submit" value="Login" style ="height: 40px; width: 80px;">
+            <article class="botonU">
+                <input type="submit" name="submit" value="Login" >
             </article>
-        </fieldset>
+
     </form>
 
     {% if erroresInicio is not empty %}

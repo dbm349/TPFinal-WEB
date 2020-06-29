@@ -12,48 +12,39 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/users/validate" method="POST" enctype="multipart/form-data">
-        <fieldset id="registroUser">
-            <legend>Registro</legend>
+    <form action="/users/validate" method="POST" enctype="multipart/form-data" class="formulario">
+        
+            <h2>REGISTRATE</h2>
 
             <article>
-                <label for="nombre">Nombre </label>
-                <input type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su nombre" value="{{ nombre }}" required>
-                *
+                <input class="entrada" type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="&#128100; Nombre *" value="{{ nombre }}" required>
             </article>
 
             <article>
-                <label for="apellido">Apellido </label>
-                <input type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su apellido" value="{{ apellido }}" required>
-                *
+                <input class="entrada" type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="&#128100; Apellido *" value="{{ apellido }}" required>
             </article>
 
             <article>
-                <label for="email">Email </label>
-                <input type="email" id="email" name="email" placeholder="Ingrese su email" value="{{ email }}" required>
-                *
+                <input class="entrada" type="email" id="email" name="email" placeholder="&#128100; Email *" value="{{ email }}" required>
             </article>
 
             <article>
-                <label for="tel">Teléfono </label>
-                <input type="tel" id="tel" name="tel" pattern="[0-9]{2,4}[0-9]{6,8}" placeholder="1145252525" value="{{ tel }}" required>
-                *
+                <input class="entrada" type="tel" id="tel" name="tel" pattern="[0-9]{2,4}[0-9]{6,8}" placeholder="&#128222; 1145252525 *" value="{{ tel }}" required>
             </article>
 
             <article>
-                <label for="pass">Contraseña </label>
-                <input type="password" id="pass" name="pass" pattern=".{8,50}" value="{{ pass }}" title="La contraseña debe tener 8 caracteres o más" required>
-                *
+                <input class="entrada" type="password" id="pass" name="pass" pattern=".{8,50}" value="{{ pass }}" title=" La contraseña debe tener 8 caracteres o más *" placeholder="&#128273; Contraseña *" required>
+            </article>
+
+
+            <article class="botonU">
+                <input type="submit" name="submit" value="Registrarme" >
+                <input type="reset" name="limpiar" value="Limpiar" >
             </article>
 
             <article>
                 * <small>Este dato es requerido</small>
             </article>
-
-            <article class="boton">
-                <input type="reset" name="limpiar" value="Limpiar" style ="height: 40px; width: 80px;">
-                <input type="submit" name="submit" value="Registrarme" style ="height: 40px; width: 100px;">
-            </article>
-        </fieldset>
+    
     </form>
 {% endblock %}
