@@ -432,10 +432,10 @@ input[type="text"]{
     }
 
     #t01 tr:nth-child(even) {
-    background-color: #eee;
+    background-color: #fff;
     }
     #t01 tr:nth-child(odd) {
-     background-color: #fff;
+     background-color: #BDBCB2;
     }
     #t01 th {
       background-color: black;
