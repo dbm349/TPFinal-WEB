@@ -22,13 +22,19 @@
             
             <article>
                 <label for="direccion">Direccion </label>
-                <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
+                <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direccion de la propiedad" value="{{ direccion }}" required>
                 *
             </article>
 
             <article>
                 <label for="localidad">Localidad </label>
-                <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+                <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad" value="{{ localidad }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="provincia">Provincia </label>
+                <input type="text" name="provincia" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Provincia" value="{{ provincia }}" required>
                 *
             </article>
 

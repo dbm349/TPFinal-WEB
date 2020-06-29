@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Nueva publicación: VENTA DE DEPARTAMENTO{% endblock %}
+{% block title %}Nueva publicación: ALQUILER DE DEPARTAMENTO{% endblock %}
 
 {% block header %}
     {{ include('partials/nav.html') }}
@@ -29,6 +29,12 @@
             <article>
                 <label for="localidad">Localidad </label>
                 <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+                *
+            </article>
+
+            <article>
+                <label for="provincia">Provincia </label>
+                <input type="text" name="provincia" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Provincia" value="{{ provincia }}" required>
                 *
             </article>
 
@@ -76,7 +82,7 @@
             </article>
 
             <article>
-                <label for="precio">Precio </label>
+                <label for="precio">Alquiler </label>
                 <input type="number" name="precio" placeholder="Precio de Alquiler" value="{{ precio }}" >
             </article>
 

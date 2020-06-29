@@ -30,7 +30,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraDepto()
@@ -42,7 +42,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraGalpon()
@@ -54,7 +54,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function compraLocal()
@@ -66,7 +66,31 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+    }
+
+    public function compraQuinta()
+    {
+        $propiedades = $this->model->get('venta','quinta'); 
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+    }
+
+    public function compraCochera()
+    {
+        $propiedades = $this->model->get('venta','cochera'); 
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     /* Busqueda Alquileres */
@@ -80,7 +104,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerDepto()
@@ -92,7 +116,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerGalpon()
@@ -104,7 +128,7 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     public function alquilerLocal()
@@ -116,7 +140,31 @@ class ControladorPropiedades extends Controller
         }else{
             $inicio=false;
         }
-        return view('busqueda', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+    }
+
+    public function alquilerQuinta()
+    {
+        $propiedades = $this->model->get('alquiler','quinta'); 
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
+    }
+
+    public function alquilerCochera()
+    {
+        $propiedades = $this->model->get('alquiler','cochera'); 
+        session_start() ;
+        if(isset($_SESSION['iniciado'])){
+            $inicio = true;
+        }else{
+            $inicio=false;
+        }
+        return view('busqueda2', ['inicio'=>$inicio, 'propiedades'=>$propiedades]);
     }
 
     /*---------------Registro de propiedades---------------*/
@@ -180,5 +228,11 @@ class ControladorPropiedades extends Controller
             
         }
     }
-    
+
+    /*-----------VER------------- */
+
+    public function verProp(){
+        $propiedad = $_GET['direccion'];
+        print_r($propiedad);
+    }
 }

@@ -45,6 +45,14 @@
         }else{
             $propiedad['localidad'] = $_POST['localidad'];
         }
+
+        if(empty($_POST['provincia'])){
+            $Errores['provincia'] = 'provincia vacio';
+        } elseif (!preg_match('/^[A-Za-zÀ-ž\s]+$/',$_POST['provincia'])) {
+            $Errores['provincia']=' La provincia solo debe contener letras. ';
+        }else{
+            $propiedad['provincia'] = $_POST['provincia'];
+        }
         
         if(!empty($_POST['supTotal'])){
             if(is_numeric($_POST['supTotal'])){
