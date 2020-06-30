@@ -103,7 +103,7 @@ class QueryBuilder
         $statement->bindValue(':mail', $parameters['mail'], PDO::PARAM_STR);
         $statement->bindValue(':pass', $parameters['pass'], PDO::PARAM_STR);
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     public function UpdateUser($table,$parameters){
@@ -113,8 +113,8 @@ class QueryBuilder
                                                                 telefono=:telefono,
                                                                 pass=:newpass where mail= :mail and pass= :pass ");
 
-        $statement->bindValue(':mail', $parameters['mail'], PDO::PARAM_STR);
-        $statement->bindValue(':pass', $parameters['pass'], PDO::PARAM_STR);
+        $statement->bindValue(':mail', $parameters['mailSession'], PDO::PARAM_STR);
+        $statement->bindValue(':pass', $parameters['passSession'], PDO::PARAM_STR);
 
         $statement->bindValue(':nombre', $parameters['nombre'], PDO::PARAM_STR);
         $statement->bindValue(':apellido', $parameters['apellido'], PDO::PARAM_STR);

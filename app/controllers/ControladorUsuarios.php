@@ -117,21 +117,18 @@ class ControladorUsuarios extends Controller
         }else{
             $inicio=false;
         }
-        return view('usuario.modificacion',['inicio'=>$inicio,'user'=>$datosUser[0]]);
+        return view('usuario.modificacion',['inicio'=>$inicio,'user'=>$datosUser]);
         /* Mostrar vista para cambiar datos */
         /**Se podria recuperar datos de la bd para mostrar en el formulario de modificacion*/
     }
 
     public function update(){
         session_start();
-        $_SESSION['iniciado'] = true;
-        $inicio = true;
 
         $Errores =  array();
         require 'app/controllers/ValidateUsuarioNuevo.php';
 
         if (empty($Errores)){
-
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
             $mail = $_POST['email'];
@@ -148,16 +145,20 @@ class ControladorUsuarios extends Controller
             ];
 
             $this->model->UpdateUsuario($usuario);
-            $_SESSION['usuario'] = $mail;
-            $_SESSION['pass'] = $pass;
 
             /**Actualizo  usuarioM para buscar los datos nuevos*/
+            $_SESSION['usuario'] = $usuario['mail'];
+            $_SESSION['pass'] = $usuario['pass'];
+            $_SESSION['iniciado'] = true;
+            $inicio = $_SESSION['iniciado'];
+
             $usuarioM = [
                 'mail' => $_SESSION['usuario'],
                 'pass' => $_SESSION['pass']
             ];
             $datosUser = $this->model->GetUsuario($usuarioM);
-            return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser[0]]);
+
+            return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser]);
         }else{
             $usuarioM = [
                 'mail' => $_SESSION['usuario'],
@@ -181,7 +182,7 @@ class ControladorUsuarios extends Controller
         ];
         $inicio = true;
         $datosUser = $this->model->GetUsuario($usuario);
-        return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser[0]]);
+        return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser]);
     }
 
 }
