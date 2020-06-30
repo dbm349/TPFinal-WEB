@@ -13,38 +13,40 @@
 
 {% block main %}
 <div id="busquedaindex">
-    <form action="/busqueda" method="POST" enctype="multipart/form-data">
-        <fieldset>
-            <h1>Propiedades en venta y alquiler</h1>
-            <article id="enfila">
-                <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad">
-            </article>
+    <div id="cuadroBusqueda">
+        <form action="/busqueda" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <h1>Propiedades en venta y alquiler</h1>
+                <article id="enfila">
+                    <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad">
+                </article>
 
-            <article id="enfila">
-                <select id="operacion" name="operacion">
-                    <option disabled selected>Seleccione una Operación</option>
-                    <option value="compra">Compra</option>
-                    <option value="alquiler">Alquiler</option>
-                </select>
-            </article>
+                <article id="enfila">
+                    <select id="operacion" name="operacion">
+                        <option disabled selected>Seleccione una Operación</option>
+                        <option value="compra">Compra</option>
+                        <option value="alquiler">Alquiler</option>
+                    </select>
+                </article>
 
-            <article id="enfila">
-                <select id="tipoProp" name="tipoProp">
-                    <option disabled selected>Seleccione tipo de Propiedad</option>
-                    <option value="casa">Casa</option>
-                    <option value="departamento">Departamento</option>
-                    <option value="galpón">Galpón</option>
-                    <option value="local">Local</option>
-                    <option value="quinta">Quinta</option>
-                    <option value="cochera">Cochera</option>
-                </select>
-            </article>
-            
-            <article id="botonBuscar">
-                <input type="submit" name="submit" value="Buscar"  style ="height: 40px; width: 80px;">
-            </article>
-        </fieldset>
-    </form>
+                <article id="enfila">
+                    <select id="tipoProp" name="tipoProp">
+                        <option disabled selected>Seleccione tipo de Propiedad</option>
+                        <option value="casa">Casa</option>
+                        <option value="departamento">Departamento</option>
+                        <option value="galpón">Galpón</option>
+                        <option value="local">Local</option>
+                        <option value="quinta">Quinta</option>
+                        <option value="cochera">Cochera</option>
+                    </select>
+                </article>
+                
+                <article id="botonBuscar">
+                    <input type="submit" name="submit" value="Buscar"  style ="height: 40px; width: 80px;">
+                </article>
+            </fieldset>
+        </form>
+    </div>
 
     <div id="slideshow-principal">
         <div id="progress-bar-container">
