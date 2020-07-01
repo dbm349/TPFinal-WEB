@@ -12,77 +12,116 @@
 {% endblock %}
 
 {% block main %}
-<h2>Detalles</h2>
-<section>
-    <dl>
-        <dt>Direccion:</dt><dl>{{propiedad.direccion}}</dl>
-        <dt>Localidad:</dt><dl>{{propiedad.localidad}}</dl>
-        <dt>Provincia:</dt><dl>{{propiedad.provincia}}</dl>
+<h2 id="datos">Detalles</h2>
+<table id="t01">
+    <tr>
+        <th>Dirección</th><td>{{propiedad.direccion}}</td>
+    </tr>
 
+    <tr>
+        <th>Localidad</th><td>{{propiedad.localidad}}</td>
+    </tr>
+
+    <tr>
+        <th>Provincia</th><td>{{propiedad.provincia}}</td>
+    </tr>
+
+    <tr>
         {% if propiedad.supTotal is not empty %}
-            <dt>Superficie Total:</dt><dl>{{propiedad.supTotal}}</dl>
+        <th>Superficie Total</th><td>{{propiedad.supTotal}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.supCub is not empty %}
-        <dt>Superficie Cubierta:</dt><dl>{{propiedad.supCub}}</dl>
+        <th>Superficie Cubierta</th><td>{{propiedad.supCub}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.piso is not empty %}
-        <dt>Piso:</dt><dl>{{propiedad.piso}}</dl>
+        <th>Piso</th><td>{{propiedad.piso}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.ambientes is not empty %}
-        <dt>Ambientes:</dt><dl>{{propiedad.ambientes}}</dl>
+        <th>Ambientes</th><td>{{propiedad.ambientes}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.dormitorios is not empty %}
-        <dt>Dormitorios:</dt><dl>{{propiedad.dormitorios}}</dl>
+        <th>Dormitorios</th><td>{{propiedad.dormitorios}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.baños is not empty %}
-        <dt>Baños:</dt><dl>{{propiedad.baños}}</dl>
+        <th>Baños</th><td>{{propiedad.baños}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.patio is not empty %}
-        <dt>Patio:</dt><dl>{{propiedad.patio}}</dl>
+        <th>Patio</th><td>{{propiedad.patio}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.piscina is not empty %} 
-        <dt>Piscina:</dt><dl>{{propiedad.piscina}}</dl>
+        <th>Piscina</th><td>{{propiedad.piscina}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.garage is not empty %}
-        <dt>Garage:</dt><dl>{{propiedad.garage}}</dl>
+        <th>Garage</th><td>{{propiedad.garage}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.parrilla is not empty %}
-        <dt>Parrilla:</dt><dl>{{propiedad.parrilla}}</dl>
+        <th>Parrilla</th><td>{{propiedad.parrilla}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.quincho is not empty %}
-        <dt>Quincho:</dt><dl>{{propiedad.quincho}}</dl>
+        <th>Quincho</th><td>{{propiedad.quincho}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.antiguedad is not empty %}
-        <dt>Antiguedad:</dt><dl>{{propiedad.antiguedad}}</dl>
+        <th>Antiguedad</th><td>{{propiedad.antiguedad}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.precio is not empty %}
-        <dt>Precio:</dt><dl>{{propiedad.precio}}</dl>
+        <th>Precio</th><td>{{propiedad.precio}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.expensas is not empty %}
-        <dt>Expensas:</dt><dl>{{propiedad.expensas}}</dl>
+        <th>Expensas</th><td>{{propiedad.expensas}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.moneda is not empty %}
-        <dt>Moneda:</dt><dl>{{propiedad.moneda}}</dl>
+        <th>Moneda</th><td>{{propiedad.moneda}}</td>
         {% endif %}
+    </tr>
 
+    <tr>
         {% if propiedad.descripcion is not empty %}
-        <dt>Descripcion:</dt><dl>{{propiedad.descripcion}}</dl>
+        <th>Descripción</th><td>{{propiedad.descripcion}}</td>
         {% endif %}
-    </dl>
+    </tr>
+    </table>
 </section>
 
 {% endblock %}

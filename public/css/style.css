@@ -515,29 +515,35 @@ input[type="submit"], input[type="reset"]{
 
 /*-----------------------------MOSTRAR DATOS--------------*/
 
-table{
-    margin: 0 auto;
-}
+    table{
+        margin: 0 auto;
+    }
 
-th{
-    padding: 6px;
-}
+    th{
+        padding: 6px;
+    }
 
-td{
-    text-align: center;
-}
+    td{
+        text-align: center;
+        padding-left: 50px;
+    }
 
-#t01 tr:nth-child(even) {
-background-color: #fff;
-}
-#t01 tr:nth-child(odd) {
-    background-color: #BDBCB2;
-}
-#t01 th {
-    background-color: black;
-    color: white;
-}
+    #t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
 
+    #t01 tr:nth-child(odd) {
+        background-color: #BDBCB2;
+    }
+
+    #t01 th {
+        background-color: black;
+        color: white;
+    }
+
+    #datos{
+        margin-top: 100px;
+    }
 /*-------------------FORMULARIO PARA CARGAR PROPIEDADES--------------*/
 
 .formulario{
@@ -815,5 +821,32 @@ padding-right: 20px;
         
     }    
 
+/*-----------------------------MOSTRAR DATOS--------------*/
+
+    table{
+        margin: 0 auto;
+    }
+
+    th{
+        padding: 6px;
+    }
+
+    td{
+        text-align: center;
+        padding-left: 50px;
+    }
+
+    #t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
+
+    #t01 tr:nth-child(odd) {
+        background-color: #BDBCB2;
+    }
+
+    #t01 th {
+        background-color: black;
+        color: white;
+    }
 
 }
