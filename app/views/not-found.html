@@ -1,1 +1,23 @@
-<h1>404 - Not Found</h1>
+{% extends "base.html" %}
+
+{% block title %}404- Not Found{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<section id="imagenError">
+	<h2>404- Not Found</h2>
+	<img src="/Images/undraw_empty_street_sfxm.svg" alt="Imagen404">
+</section>
+
+{% endblock %}
+    
+
+
