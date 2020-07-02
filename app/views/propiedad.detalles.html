@@ -9,6 +9,10 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADQqrHWiLIRrXLxkdFqbeslSk3dE50s-I&callback=initMap">
+    </script>
+    
 {% endblock %}
 
 {% block main %}
@@ -82,6 +86,78 @@
         {% if propiedad.descripcion is not empty %}
         <dt>Descripcion:</dt><dl>{{propiedad.descripcion}}</dl>
         {% endif %}
+
+        <div id="map"></div>
+
+        <script>
+            function initMap() {
+                var myLatLng = {lat: -25.363, lng: 131.044};
+    
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,
+                    center: myLatLng
+                });
+    
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+            }
+        </script>
+        
+        <!--
+        <script type="text/javascript">
+
+            var divMapa = document.getElementById('mapa');
+            navigator.geolocation.getCurrentPosition(fn_ok, fn_mal);
+
+            function fn_mal(){
+
+            }
+
+            function fn_ok(rta){
+                
+                var lat = rta.coords.latitude;
+                var lon = rta.coords.logitude;
+
+                var gLatLon = new google.maps.LatLng(lat,lon);
+                var objConfig = {
+                    zoom: 17,
+                    center: gLatLon
+                }
+
+                var gMapa = new google.maps.Map(divMapa,objConfig);
+                var objConfigMarker = {
+                    position: gLatLon,
+                    map: gMapa,
+                    title: ""
+                }
+
+                var gMarker = new google.maps.Marker(objConfigMarker);
+
+                var gCoder = new google.maps.Geocoder();
+                var objInformacion = {
+                    adress: 'Belgrano 433, Lujan, Buenos Aires'
+                }
+                gCoder.geocode(objInformacion, fn_coder);
+
+                function fn_coder(datos){
+                    var coordenadas = datos[0].geometry.location; //objLatLong
+                    
+                    var config = {
+                        map: gMapa,
+                        position: coordenadas,
+                        title: 'Casa'
+                    }
+
+                    var gMarkerDV = new google.maps.Marker(config);
+                }
+            }
+
+        </script>-->
+
+        
     </dl>
 </section>
 

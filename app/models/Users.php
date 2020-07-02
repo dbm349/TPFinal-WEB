@@ -23,6 +23,11 @@ class Users extends Model
         return $this->db->buscarUser($this->table, $user);
     }
 
+    public function BuscarMail($user)
+    {
+        return $this->db->buscarByMail($this->table, $user);
+    }
+
     public function GetUsuario(array $user)
     {
         return $this->db->GetUser($this->table, $user);

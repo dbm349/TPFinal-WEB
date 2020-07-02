@@ -27,6 +27,12 @@ class ControladorUsuarios extends Controller
         $Errores =  array();
         require 'app/controllers/ValidateUsuarioNuevo.php';
 
+        $user = $_POST['email'];
+        $mail = $this->model->BuscarMail($user); 
+        print_r($mail);
+        if($mail){
+            $Errores['email'] = 'El mail ingresado ya se encuentra registrado';
+        }
         /*Si no hay errores guardo usuario nuevo en la BD*/ 
         if (empty($Errores)){
             $usuario = [
@@ -36,7 +42,6 @@ class ControladorUsuarios extends Controller
                 'telefono' => $_POST['tel'],
                 'pass' => md5($_POST['pass'])
             ];
-            /*FALTA VALIDAR SI YA EXISTE EL MAIL DE USUARIO EN LA BASE DE DATOS*/
             $this->model->insert($usuario); 
             /**HABRIA QUE INCORPORAR LOGS */
             return view('usuarioRegistrado');

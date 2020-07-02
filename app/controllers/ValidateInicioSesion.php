@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(empty($_POST['pass'])){
         $ErroresInicio['pass'] = 'Password vacia';
+    } elseif(strlen($_POST['pass'])< 8){
+        $ErroresInicio['pass'] = 'Debe tener 8 caracteres minimo';
     }
 
 }

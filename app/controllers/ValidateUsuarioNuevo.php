@@ -30,6 +30,8 @@
 
         if(empty($_POST['pass'])){
             $Errores['pass'] = 'Password vacia';
+        } else if(strlen($_POST['pass']) < 8){
+            $Errores['pass'] = 'Debe tener al menos 8 caracteres';
         }
 
     }

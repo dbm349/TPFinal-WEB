@@ -5,5 +5,5 @@ CREATE TABLE users (
     nombre TEXT NOT NULL,
     apellido TEXT NOT NULL,
     mail TEXT NOT NULL,
-    telefono TEXT,
+    telefono TEXT NOT NULL,
     pass TEXT NOT NULL);

@@ -6,12 +6,13 @@ CREATE TABLE propiedades (
     tipo_propiedad TEXT NOT NULL,
     direccion text NOT NULL,
     localidad text NOT NULL,
+    provincia text NOT NULL,
     supTotal INTEGER,
     supCub INTEGER,
     piso INTEGER,
     ambientes INTEGER,
     dormitorios INTEGER,
-    baños INTEGER,
+    banios INTEGER,
     patio BOOLEAN,
     piscina BOOLEAN,
     garage BOOLEAN,
@@ -23,6 +24,6 @@ CREATE TABLE propiedades (
     expensas FLOAT,
     moneda TEXT,
     descripcion TEXT,
-    id_u INTEGER NOT NULL,
-    FOREIGN KEY(id_u)REFERENCES users(id));
+    mail text NOT NULL,
+    FOREIGN KEY(mail)REFERENCES users(mail));
 

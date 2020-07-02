@@ -78,6 +78,8 @@ class QueryBuilder
         }
     }
 
+    //-------------BUSCAR USERS---------------
+
     public function buscarUser($table, $parameters)
     {
         $parameters = $this->cleanParameterName($parameters);
@@ -95,6 +97,23 @@ class QueryBuilder
         }
     }
 
+    public function buscarByMail($table, $parameter)
+    {
+
+        $statement = $this->pdo->prepare("select * from {$table} where mail = :mail");
+        $statement->bindValue(':mail', $parameter, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetchAll(PDO::FETCH_CLASS);
+       
+        if($statement->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //---------------OBTENER USERS----------------------------
+
     public function GetUser($table, $parameters)
     {
         $parameters = $this->cleanParameterName($parameters);
@@ -105,6 +124,8 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
+    //--------------MODIFICAR USER----------------------------
 
     public function UpdateUser($table,$parameters){
         $parameters = $this->cleanParameterName($parameters);
