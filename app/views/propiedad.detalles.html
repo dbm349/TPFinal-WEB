@@ -9,10 +9,11 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADQqrHWiLIRrXLxkdFqbeslSk3dE50s-I&callback=initMap">
-    </script>
-    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
 {% endblock %}
 
 {% block main %}
@@ -126,77 +127,40 @@
         {% endif %}
     </tr>
 </table>
-        
+
 <div id="map"></div>
 
-    <script>
-        function initMap() {
-            var myLatLng = {lat: -25.363, lng: 131.044};
+<script>
+    // Initialize map to specified coordinates
+    var map = L.map('map', {
+      center: [51.5, -0.1], //lat long
+      zoom: 15
+    });
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: myLatLng
-            });
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      subdomains: ['a', 'b', 'c']
+    }).addTo(map);
 
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
-        }
-    </script>
+    var query_addr = "{{propiedad.direccion}}, {{propiedad.localidad}}, {{propiedad.provincia}}";
     
-    <!--
-    <script type="text/javascript">
+    const provider = new window.GeoSearch.OpenStreetMapProvider()
+    var query_promise = provider.search({
+      query: query_addr
+    });
 
-        var divMapa = document.getElementById('mapa');
-        navigator.geolocation.getCurrentPosition(fn_ok, fn_mal);
-
-        function fn_mal(){
-
-        }
-
-        function fn_ok(rta){
-            
-            var lat = rta.coords.latitude;
-            var lon = rta.coords.logitude;
-
-            var gLatLon = new google.maps.LatLng(lat,lon);
-            var objConfig = {
-                zoom: 17,
-                center: gLatLon
-            }
-
-            var gMapa = new google.maps.Map(divMapa,objConfig);
-            var objConfigMarker = {
-                position: gLatLon,
-                map: gMapa,
-                title: ""
-            }
-
-            var gMarker = new google.maps.Marker(objConfigMarker);
-
-            var gCoder = new google.maps.Geocoder();
-            var objInformacion = {
-                adress: 'Belgrano 433, Lujan, Buenos Aires'
-            }
-            gCoder.geocode(objInformacion, fn_coder);
-
-            function fn_coder(datos){
-                var coordenadas = datos[0].geometry.location; //objLatLong
-                
-                var config = {
-                    map: gMapa,
-                    position: coordenadas,
-                    title: 'Casa'
-                }
-
-                var gMarkerDV = new google.maps.Marker(config);
-            }
-        }
-
-    </script>-->
-
+    query_promise.then(value => {
+        // Success!
+        var x_coor = value[0].x;
+        var y_coor = value[0].y;
+        var label = value[0].label;
+        var marker = L.marker([y_coor, x_coor]).addTo(map) //lat long
+        marker.bindPopup("<b>Found location</b><br>" + label).openPopup(); 
+        map.panTo(new L.LatLng(y_coor, x_coor));
+    }, reason => {
+      console.log(reason); // Error!
+    });
+  </script>
 
 </section>
 

@@ -558,6 +558,16 @@ input[type="submit"], input[type="reset"]{
     #dormit{
         padding-left: 2%;
     }
+
+/*-----------------------MAPA-------------------------*/
+    #map{
+        height: 580px;
+        width: 70%;
+        box-shadow: 5px 5px 5px #888;
+        display:block;
+        margin:auto;
+    }
+
 /*-------------------FORMULARIO PARA CARGAR PROPIEDADES--------------*/
 
 .formulario{
