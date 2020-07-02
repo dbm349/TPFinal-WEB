@@ -1,1 +1,20 @@
-<h1>500 - Internal Server Error</h1>
+{% extends "base.html" %}
+
+{% block title %}500-Internal Server Error{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<section id="imagenError">
+	<h2>500 - Internal Server Error</h2>
+	<img src="/Images/undraw_small_town_rxs3.svg" alt="Imagen500">
+</section>
+
+{% endblock %}

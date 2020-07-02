@@ -515,29 +515,49 @@ input[type="submit"], input[type="reset"]{
 
 /*-----------------------------MOSTRAR DATOS--------------*/
 
-table{
-    margin: 0 auto;
-}
+    table{
+        margin: 0 auto;   
+    }
 
-th{
-    padding: 6px;
-}
+    th{
+        padding: 1%;
+        margin-right: 3%;
+    }
 
-td{
-    text-align: center;
-}
+    td{
+        text-align: center;
+        margin:2%;
+    }
 
-#t01 tr:nth-child(even) {
-background-color: #fff;
-}
-#t01 tr:nth-child(odd) {
-    background-color: #BDBCB2;
-}
-#t01 th {
-    background-color: black;
-    color: white;
-}
+    #t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
 
+    #t01 tr:nth-child(odd) {
+        background-color: #BDBCB2;
+    }
+
+    #t01 th {
+        background-color: black;
+        color: white;
+    }
+
+    #tr1{
+        background-color: red;
+    }
+
+    #datos{
+        margin-top: 100px;
+    }
+
+    .espaciado{
+        margin-bottom: 5px;
+        height: 30px;
+    }
+
+    #dormit{
+        padding-left: 2%;
+    }
 /*-------------------FORMULARIO PARA CARGAR PROPIEDADES--------------*/
 
 .formulario{
@@ -598,12 +618,29 @@ padding-right: 20px;
 }
 
 
+/*---------------------IMAGEN 404---------------------------*/
+
+    #imagenError h2{
+        text-align: center;
+        font-size: 50px;
+        margin-left: 50px;
+        z-index: 400;
+        position: relative;
+        padding-top: 100px;
+    } 
+
+    #imagenError img{
+        z-index: 300;
+        position: fixed;
+    }    
+
 /*----------------------RESPONSIVE---------------------*/
 
 @media screen and (max-width: 900px){
     
     header{
         padding: 0 20px;
+        position: fixed;
     }
 
     .menu-toggle{
@@ -665,15 +702,6 @@ padding-right: 20px;
         z-index: 2000;
     }
 
-
-    #enfila{
-        width: 20%;
-        height: 20%;
-        font-size: 20px;
-        float: none;
-        padding-right:15%;
-        
-    }
 
     #botonBuscar{
         float: none;
@@ -780,6 +808,116 @@ padding-right: 20px;
 
     textarea{
         width: 245px;
+    }
+
+    #enfila{
+        width: 112px;
+        height: 10%;
+        font-size: 20px;
+        float: none;
+        padding-right:15%;
+        
+    }
+
+    #enfila select{
+        border: 1;
+        opacity: 0.8;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 6%;
+        margin-left: 3px;
+        padding: 5px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        width: 45vw;
+        height: 9vw;
+    }
+
+
+    #enfila input[type="text"]{
+        border: 1;
+        opacity: 0.8;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 6%;
+        margin-left: 3px;
+        padding: 2px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        width: 45vw;
+        height: 7vw;
+    }
+
+/*----------------------------------------VISTA FUERA DE SESIÓN---------------*/
+    #fueraSesion{
+        top: 30px;
+        position: relative;
+    }
+
+
+/*----------------------------------------VISTA INICIO DE SESIÓN---------------*/
+    #iniSesion{
+        top: 30px;
+        position: relative;
+        font-size: 5vw;
+    }
+
+/*-------------------------------H2 DE LOS FORMULARIOS-------------------*/
+    #tituloP{
+        font-size: 4vw;
+        top: 35px;
+        position: relative;
+        margin-left: 3px;
+
+    }    
+
+/*---------------------IMAGEN 404---------------------------*/
+
+    #imagenError h2{
+        text-align: center;
+        font-size: 200%;
+        margin-left: 30px;
+        z-index: 400;
+        position: relative;
+        padding-top: 100px;
+    } 
+
+    #imagenError img{
+        z-index: 300;
+        
+    }    
+
+/*-----------------------------MOSTRAR DATOS--------------*/
+
+    table{
+        margin: 0 auto;
+    }
+
+    th{
+        text-align: left;
+        padding: 1%;
+        padding-left: 1px;
+        font-size: 80%;
+    }
+
+    td{
+        text-align: left;
+        padding-left: 1px;
+        padding-right: 0px;
+        font-size: 80%;
+    }
+
+    #t01 tr:nth-child(even) {
+        background-color: #fff;
+    }
+
+    #t01 tr:nth-child(odd) {
+        background-color: #BDBCB2;
+    }
+
+    #t01 th {
+        background-color: black;
+        color: white;
     }
 
 
