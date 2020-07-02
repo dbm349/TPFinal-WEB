@@ -117,6 +117,12 @@
             </p>
         {% endif %}
 
+        {% if errores['provincia'] %}
+                <p>
+                    Provinicia: {{ errores['provincia'] }}
+                </p>
+        {% endif %}
+
         {% if errores['supTotal'] %}
             <p>
                 Sup. Total: {{ errores['supTotal'] }}

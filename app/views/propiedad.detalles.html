@@ -156,7 +156,7 @@
         var label = value[0].label;
         var marker = L.marker([y_coor, x_coor]).addTo(map) //lat long
         marker.bindPopup("<b>Found location</b><br>" + label).openPopup(); 
-        map.panTo(new L.LatLng(y_coor, x_coor));
+        map.panTo(new L.LatLng(y_coor, x_coor)); //desplazar mapa a la ubicacion del marcador
     }, reason => {
       console.log(reason); // Error!
     });
