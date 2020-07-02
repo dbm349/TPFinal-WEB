@@ -516,16 +516,17 @@ input[type="submit"], input[type="reset"]{
 /*-----------------------------MOSTRAR DATOS--------------*/
 
     table{
-        margin: 0 auto;
+        margin: 0 auto;   
     }
 
     th{
-        padding: 6px;
+        padding: 1%;
+        margin-right: 3%;
     }
 
     td{
         text-align: center;
-        padding-left: 50px;
+        margin:2%;
     }
 
     #t01 tr:nth-child(even) {
@@ -541,8 +542,21 @@ input[type="submit"], input[type="reset"]{
         color: white;
     }
 
+    #tr1{
+        background-color: red;
+    }
+
     #datos{
         margin-top: 100px;
+    }
+
+    .espaciado{
+        margin-bottom: 5px;
+        height: 30px;
+    }
+
+    #dormit{
+        padding-left: 2%;
     }
 /*-------------------FORMULARIO PARA CARGAR PROPIEDADES--------------*/
 
@@ -626,6 +640,7 @@ padding-right: 20px;
     
     header{
         padding: 0 20px;
+        position: fixed;
     }
 
     .menu-toggle{
@@ -687,15 +702,6 @@ padding-right: 20px;
         z-index: 2000;
     }
 
-
-    #enfila{
-        width: 20%;
-        height: 20%;
-        font-size: 20px;
-        float: none;
-        padding-right:15%;
-        
-    }
 
     #botonBuscar{
         float: none;
@@ -804,6 +810,66 @@ padding-right: 20px;
         width: 245px;
     }
 
+    #enfila{
+        width: 112px;
+        height: 10%;
+        font-size: 20px;
+        float: none;
+        padding-right:15%;
+        
+    }
+
+    #enfila select{
+        border: 1;
+        opacity: 0.8;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 6%;
+        margin-left: 3px;
+        padding: 5px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        width: 45vw;
+        height: 9vw;
+    }
+
+
+    #enfila input[type="text"]{
+        border: 1;
+        opacity: 0.8;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-top: 6%;
+        margin-left: 3px;
+        padding: 2px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        width: 45vw;
+        height: 7vw;
+    }
+
+/*----------------------------------------VISTA FUERA DE SESIÓN---------------*/
+    #fueraSesion{
+        top: 30px;
+        position: relative;
+    }
+
+
+/*----------------------------------------VISTA INICIO DE SESIÓN---------------*/
+    #iniSesion{
+        top: 30px;
+        position: relative;
+        font-size: 5vw;
+    }
+
+/*-------------------------------H2 DE LOS FORMULARIOS-------------------*/
+    #tituloP{
+        font-size: 4vw;
+        top: 35px;
+        position: relative;
+        margin-left: 3px;
+
+    }    
 
 /*---------------------IMAGEN 404---------------------------*/
 
@@ -828,12 +894,17 @@ padding-right: 20px;
     }
 
     th{
-        padding: 6px;
+        text-align: left;
+        padding: 1%;
+        padding-left: 1px;
+        font-size: 80%;
     }
 
     td{
-        text-align: center;
-        padding-left: 50px;
+        text-align: left;
+        padding-left: 1px;
+        padding-right: 0px;
+        font-size: 80%;
     }
 
     #t01 tr:nth-child(even) {
@@ -848,5 +919,6 @@ padding-right: 20px;
         background-color: black;
         color: white;
     }
+
 
 }

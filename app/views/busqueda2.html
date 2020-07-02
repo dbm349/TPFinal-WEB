@@ -13,45 +13,53 @@
 {% endblock %}
 
 {% block main %}
-<h2>Resultados de Busqueda</h2>
+<h2 id="tituloP">Resultados de Busqueda</h2>
+<table>
 
-<ul>
-    <li>
+    <tr>
     {% for propiedad in propiedades %}
     
-        <dt>Direccion:</dt><dl>{{propiedad.direccion}}</dl>
-        <dt>Localidad:</dt><dl>{{propiedad.localidad}}</dl>
-        <dt>Provincia:</dt><dl>{{propiedad.provincia}}</dl>
-
+        <th>Direccion</th><td>{{propiedad.direccion}}</td>
+        <th>Localidad</th><td>{{propiedad.localidad}}</td>
+        <th>Provincia</th><td>{{propiedad.provincia}}</td>
+    </tr>
+    <tr>
         {% if propiedad.supTotal is not empty %}
-            <dt>Superficie Total:</dt><dl>{{propiedad.supTotal}}</dl>
+            <th>Superficie Total</th><td>{{propiedad.supTotal}}</td>
         {% endif %}
-
+    
         {% if propiedad.supCub is not empty %}
-            <dt>Superficie Cubierta:</dt><dl>{{propiedad.supCub}}</dl>
+            <th>Superficie Cubierta</th><td>{{propiedad.supCub}}</td>
         {% endif %}
 
         {% if propiedad.ambientes is not empty %}
-            <dt>Ambientes:</dt><dl>{{propiedad.ambientes}}</dl>
+            <th>Ambientes</th><td>{{propiedad.ambientes}}</td>
         {% endif %}
-
+    </tr>
+    <tr>
         {% if propiedad.dormitorios is not empty %}
-            <dt>Dormitorios:</dt><dl>{{propiedad.dormitorios}}</dl>
+            <th>Dormitorios</th><td id="dormit">{{propiedad.dormitorios}}</td>
         {% endif %}
 
         {% if propiedad.baños is not empty %}
-            <dt>Baños:</dt><dl>{{propiedad.baños}}</dl>
+            <th>Baños</th><td>{{propiedad.baños}}</td>
         {% endif %}
-
+    
         {% if propiedad.precio is not empty %}
-            <dt>Precio:</dt><dl>${{propiedad.precio}}</dl>
+            <th>Precio</th><td>${{propiedad.precio}}</td>
         {% endif %}
+    </tr>
+    <tr>
+    <th><a href="/publicacion/Ver?id={{propiedad.id_p}}">Ver Mas</a></th><br>
+    </tr>
+    <tr class="espaciado"></tr>
 
-    <a href="/publicacion/Ver?id={{propiedad.id_p}}">Ver Mas</a>
     {% else %}
+
+    </table>
         <span>No hay resultados en la busqueda</span>
     {% endfor %}
-    </li>
-<ul>
+    
+
 
 {% endblock %}
