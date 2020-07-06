@@ -20,112 +20,113 @@
             <input type="text" name="operacion" value={{operacion}} required hidden>
             <input type="text" name="propiedad" value={{propiedad}} required hidden>
             
-            <article id="publi">
+            <div id="publi">
                 <label for="direccion">Dirección *</label>
                 <input type="text" name="direccion" maxlength="20" pattern="[A-Za-zÀ-ž0-9\s]{3,20}" placeholder="Direc de la propiedad" value="{{ direccion }}" required>
-            </article>
+            </div>
 
-            <article id="publi">
+            <div id="publi">
                 <label for="localidad">Localidad *</label>
                 <input type="text" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad de la propiedad" value="{{ localidad }}" required>
+            </div>
 
-            <article>
+            <div>
                 <label for="provincia">Provincia *</label>
                 <input type="text" name="provincia" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Provincia" value="{{ provincia }}" required>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="supTotal">Sup.Total </label>
                 <input type="number" name="supTotal"  placeholder="Superficie Total" value="{{ supTotal }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="supCub">Sup.Cubierta </label>
                 <input type="number" name="supCub" placeholder="Superficie Cubierta" value="{{ supCub }}" >
-            </article>
+            </div>
 
-             <article>
+             <div>
                 <label for="ambientes">Ambientes </label>
                 <input type="number" name="ambientes" min="1" max="15" placeholder="Cantidad de ambientes" value="{{ ambientes }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="dormitorios">Dormitorios </label>
                 <input type="number" name="dormitorios" min="1" max="20" placeholder="Cantidad de dormitorios" value="{{ dormitorios }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="baños">Baños </label>
                 <input type="number" name="banios" min="1" max="5" placeholder="Cantidad de baños" value="{{ baños }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="patio">Patio </label>
                 <input type="radio" name="patio" value="si" >
                 <label for="si">Si </label>
                 <input type="radio" name="patio" value="no" >
                 <label for="no">No </label>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="piscina">Piscina </label>
                 <input type="radio" name="piscina" value="si" >
                 <label for="si">Si </label>
                 <input type="radio" name="piscina" value="no" >
                 <label for="no">No </label>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="garage">Garage </label>
                 <input type="radio" name="garage" value="si" >
                 <label for="si">Si </label>
                 <input type="radio" name="garage" value="no" >
                 <label for="no">No </label>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="parrilla">Parrilla </label>
                 <input type="radio" name="parrilla" value="si" >
                 <label for="si">Si </label>
                 <input type="radio" name="parrilla" value="no" >
                 <label for="no">No </label>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="antiguedad">Antiguedad </label>
                 <input type="number" name="antiguedad" placeholder="Años de antiguedad" value="{{ antiguedad }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="precio">Alquiler </label>
                 <input type="number" name="precio" placeholder="Precio de Alquiler" value="{{ precio }}" >
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="moneda">Moneda </label>
                 <input type="radio" name="moneda" value="dolar" >
                 <label for="dolar">Dolar </label>
                 <input type="radio" name="moneda" value="peso" >
                 <label for="peso">Peso </label>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <textarea name="descripcion" rows="10" cols="40" placeholder="Agregue una descripción aquí"></textarea>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="fotos">Fotos</label>
                 <input type="file" id="fotos" name="fotos" accept=".jpg,.png" multiple>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <input type="submit" name="submit" value="Enviar">
                 <input type="reset" name="limpiar" value="Limpiar">
-            </article>
+            </div>
         
-            <article>
+            <p>
                 * <small>Este dato es requerido</small>
-            </article>
+            </p>
     </form>
 
     {% if errores is not empty %}
