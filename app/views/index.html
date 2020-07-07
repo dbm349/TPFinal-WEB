@@ -14,10 +14,10 @@
 {% block main %}
 <div id="busquedaindex">
     <div id="cuadroBusqueda">
+        <h1>Propiedades en venta y alquiler</h1>
         <form action="/busqueda" method="POST" enctype="multipart/form-data">
             <fieldset>
-                <h1>Propiedades en venta y alquiler</h1>
-                <div id="enfila" class="autocompletar">
+                <div id="enfila">
                     <input type="text" id="localidad" name="localidad" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Localidad">
                 </div>
 
@@ -56,11 +56,17 @@
             <img src="" alt="" id="img1" class="imgportada">
             <img src="" alt="" id="img2" class="imgportada">
         </div>
+
+            <div id="botonVerPropiedad">
+                <input type="submit" name="submit" value="Ver Propiedad">
+            </div>
+
         <div id="indicadores"></div>
     </div>
     
-    <script src="js/script.js"></script>
-   
+    <script src="js/script.js"></script>  
 </div>
+
+
 {% endblock %}
 
