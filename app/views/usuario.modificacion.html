@@ -8,7 +8,7 @@
 
 {% block head %}
     {{ parent() }}
-    <meta name="keywords" content="PAW,2018,Templates,PHP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% endblock %}
 
 {% block main %}
@@ -16,43 +16,43 @@
 
             <h3>Modificacion de Datos Personales</h3>
 
-            <article id="publi1">
+            <div id="publi1">
                 <label for="email">Email </label>
                 <input type="email" id="email" name="email" value="{{ user.mail }}" readonly required>
                 
-            </article>
+            </div>
 
-            <article id="publi1">
+            <div id="publi1">
                 <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su nombre" value="{{ user.nombre }}" required>
                 *
-            </article>
+            </div>
 
-            <article id="publi1">
+            <div id="publi1">
                 <label for="apellido">Apellido </label>
                 <input type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Ingrese su apellido" value="{{ user.apellido }}" required>
                 *
-            </article>
+            </div>
 
-            <article id="publi1">
+            <div id="publi1">
                 <label for="tel">Teléfono </label>
                 <input type="number" id="tel" name="tel" pattern=[0-9\+][0-9]{13} placeholder="Ingrese su teléfono" value="{{ user.telefono }}" required>
                 *
-            </article>
+            </div>
 
-            <article id="publi1">
+            <div id="publi1">
                 <label for="pass">Contraseña </label>
                 <input type="password" id="pass" name="pass" pattern=".{8,50}" title="La contraseña debe tener 8 caracteres o más" required>
                 *
-            </article>
+            </div>
 
-            <article class="boton">
+            <div class="boton">
                 <input type="submit" name="submit" value="Cambiar">
-            </article>
+            </div>
 
-            <article>
+            <p>
                 * <small>Este dato es requerido</small>
-            </article>
+            </p>
         
     </form>
 {% endblock %}

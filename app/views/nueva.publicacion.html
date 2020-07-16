@@ -8,7 +8,7 @@
 
 {% block head %}
     {{ parent() }}
-    <meta name="keywords" content="PAW,2018,Templates,PHP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% endblock %}
 
 {% block main %}
@@ -17,15 +17,15 @@
         
             <h3>Nueva Publicación</h3>
 
-            <article>
+            <div>
                 <label for="operacion">Operación </label>
                     <select id="operacion" name="operacion">
                         <option value="venta">Venta</option>
                         <option value="alquiler">Alquiler</option>
                     </select>
-            </article>
+            </div>
 
-            <article>
+            <div>
                 <label for="propiedad">Propiedad </label>
                     <select id="propiedad" name="propiedad">
                         <option value="casa">Casa</option>
@@ -35,11 +35,11 @@
                         <option value="quinta">Quinta</option>
                         <option value="cochera">Cochera</option>
                     </select>
-            </article>
+            </div>
 
-            <article class="boton">
+            <div class="boton">
                 <input type="submit" name="submit" value="Enviar" >
-            </article>
+            </div>
         
     </form>
 
