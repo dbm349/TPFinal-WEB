@@ -17,116 +17,86 @@
 {% endblock %}
 
 {% block main %}
-<h2 id="datos">Detalles</h2>
-<table id="t01">
-    <tr>
-        <th>Dirección</th><td>{{propiedad.direccion}}</td>
-    </tr>
 
-    <tr>
-        <th>Localidad</th><td>{{propiedad.localidad}}</td>
-    </tr>
-
-    <tr>
-        <th>Provincia</th><td>{{propiedad.provincia}}</td>
-    </tr>
-
-    <tr>
+<img src="/Images/arrow_back-24px.svg"  class="flecha-back" id="flecha" border="0" onclick="history.back();">
+<h2 id="datos">DETALLES</h2>
+   
+    <p id="parrafo">Características de la propiedad</p>
+    <div id="caracteristicas">
         {% if propiedad.supTotal is not empty %}
-        <th>Superficie Total</th><td>{{propiedad.supTotal}}</td>
+        <div id="items">Superficie Total: {{propiedad.supTotal}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.supCub is not empty %}
-        <th>Superficie Cubierta</th><td>{{propiedad.supCub}}</td>
+        <div id="items">Superficie Cubierta: {{propiedad.supCub}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.piso is not empty %}
-        <th>Piso</th><td>{{propiedad.piso}}</td>
+        <div id="items">Piso: {{propiedad.piso}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.ambientes is not empty %}
-        <th>Ambientes</th><td>{{propiedad.ambientes}}</td>
+        <div id="items">Ambientes: {{propiedad.ambientes}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.dormitorios is not empty %}
-        <th>Dormitorios</th><td>{{propiedad.dormitorios}}</td>
+        <div id="items">Dormitorios: {{propiedad.dormitorios}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.baños is not empty %}
-        <th>Baños</th><td>{{propiedad.baños}}</td>
+        <div id="items">Baños: {{propiedad.baños}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.patio is not empty %}
-        <th>Patio</th><td>{{propiedad.patio}}</td>
+        <div id="items">Patio: {{propiedad.patio}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.piscina is not empty %} 
-        <th>Piscina</th><td>{{propiedad.piscina}}</td>
+        <div id="items">Piscina: {{propiedad.piscina}}</div>
         {% endif %}
-    </tr>
-
-    <tr>
+    
         {% if propiedad.garage is not empty %}
-        <th>Garage</th><td>{{propiedad.garage}}</td>
+        <div id="items">Garage: {{propiedad.garage}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.parrilla is not empty %}
-        <th>Parrilla</th><td>{{propiedad.parrilla}}</td>
+        <div id="items">Parrilla: {{propiedad.parrilla}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.quincho is not empty %}
-        <th>Quincho</th><td>{{propiedad.quincho}}</td>
+        <div id="items">Quincho: {{propiedad.quincho}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.antiguedad is not empty %}
-        <th>Antiguedad</th><td>{{propiedad.antiguedad}}</td>
+        <div id="items">Antiguedad: {{propiedad.antiguedad}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.precio is not empty %}
-        <th>Precio</th><td>{{propiedad.precio}}</td>
+        <div id="items">Precio: {{propiedad.precio}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.expensas is not empty %}
-        <th>Expensas</th><td>{{propiedad.expensas}}</td>
+        <div id="items">Expensas: {{propiedad.expensas}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.moneda is not empty %}
-        <th>Moneda</th><td>{{propiedad.moneda}}</td>
+        <div id="items">Moneda: {{propiedad.moneda}}</div>
         {% endif %}
-    </tr>
 
-    <tr>
         {% if propiedad.descripcion is not empty %}
-        <th>Descripción</th><td>{{propiedad.descripcion}}</td>
+        <div id="items">Descripción: {{propiedad.descripcion}}</div>
         {% endif %}
-    </tr>
-</table>
+    </div>
+
+    <p id="parrafo0">Ubicación</p>
+    <div id="ubicacion">    
+        <div id="items">Dirección: {{propiedad.direccion}}</div>
+
+        <div id="items">Localidad: {{propiedad.localidad}}</div>
+
+        <div id="items">Provincia: {{propiedad.provincia}}</div>
+    </div>
+
 
 <div id="map"></div>
 

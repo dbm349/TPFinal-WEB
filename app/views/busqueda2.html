@@ -16,17 +16,15 @@
 {% endblock %}
 
 {% block main %}
-<h2 id="tituloP">Resultados de Busqueda</h2>
-<table>
-
-    <tr>
+<h1 id="tituloP">Resultados de Busqueda</h1>
+  
     {% for propiedad in propiedades %}
     
         <th>Direccion</th><td>{{propiedad.direccion}}</td>
         <th>Localidad</th><td>{{propiedad.localidad}}</td>
         <th>Provincia</th><td>{{propiedad.provincia}}</td>
-    </tr>
-    <tr>
+    
+   
         {% if propiedad.supTotal is not empty %}
             <th>Superficie Total</th><td>{{propiedad.supTotal}}</td>
         {% endif %}
@@ -38,8 +36,8 @@
         {% if propiedad.ambientes is not empty %}
             <th>Ambientes</th><td>{{propiedad.ambientes}}</td>
         {% endif %}
-    </tr>
-    <tr>
+   
+    
         {% if propiedad.dormitorios is not empty %}
             <th>Dormitorios</th><td id="dormit">{{propiedad.dormitorios}}</td>
         {% endif %}
@@ -51,15 +49,15 @@
         {% if propiedad.precio is not empty %}
             <th>Precio</th><td>${{propiedad.precio}}</td>
         {% endif %}
-    </tr>
-    <tr>
+ 
+  
     <th><a href="/publicacion/Ver?id={{propiedad.id_p}}">Ver Mas</a></th><br>
-    </tr>
-    <tr class="espaciado"></tr>
+    <th><input type="button" name="button" value="Contactar"></th>
+ 
+    <p class="espaciado"></p>
 
     {% else %}
 
-    </table>
         <span>No hay resultados en la busqueda</span>
     {% endfor %}
     
