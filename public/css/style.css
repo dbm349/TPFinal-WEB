@@ -641,7 +641,7 @@ padding-right: 20px;
         border-radius: 5px 7px 7px 5px;
         font-weight: bold;
     }
-
+/*---------------------DETALLE PROPIEDAD-----------------------*/
     #parrafo0{
      padding-top:6vw; 
      text-align: left;
@@ -688,6 +688,7 @@ padding-right: 20px;
     .espaciado{
         margin-bottom: 5px;
         height: 30px;
+        background-color: white;
     }
 
     #dormit{
@@ -700,7 +701,7 @@ padding-right: 20px;
         top: 8vw;
         width: 7vw;
         height: 3vw;
-        padding-left: 2vw;
+        margin-left: 2vw;
 
    
     }
@@ -709,6 +710,44 @@ padding-right: 20px;
         cursor: pointer;
         transform: transla;
         box-shadow: 4px 30px 6px 0px rgba(50, 50, 50, 0.45);
+    }
+
+    #div{
+        border-style: inset;
+        border-color: crimson;
+        font-family: initial;
+        padding: 2vw;
+    }
+
+    #divv{
+        padding-left: 15vw;
+        padding-right: 15vw;
+        
+    }
+
+    #contactar{
+        float: right;
+    }
+
+    #seleccionar{
+        text-align-last: right;
+        margin-right: 20vw;
+        margin-bottom: 5vw;
+        
+    }
+
+
+    #ordenar{
+        height: 2vw;
+        width: 10vw;
+        font-size: 1.2vw;
+        text-align-last: left;
+    }
+
+    #ordenarpor{
+        text-align-last: center;
+        margin-left: 45vw;
+
     }
 /*----------------------RESPONSIVE---------------------*/
 
@@ -1053,6 +1092,15 @@ main #cuadroBusqueda form{
     border-radius: 5px 7px 7px 5px;
     font-weight: bold;
 }
+/*---------------------DETALLE PROPIEDAD-----------------------*/
+    #parrafo0{
+     padding-top:12vw; 
+     text-align: left;
+     font-size: 2vw;
+     padding-left: 3vw;
+     font-weight: bold;
+     font-family: fantasy;
+    }
 
 
 }
