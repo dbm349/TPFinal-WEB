@@ -1,38 +1,3 @@
-<!--{% extends "base.html" %}
-
-{% block title %}Lista de Tareas{% endblock %}
-
-{% block header %}
-    {{ include('partials/nav.html') }}
-{% endblock %}
-
-{% block head %}
-    {{ parent() }}
-    <meta name="keywords" content="PAW,2018,Templates,PHP">
-{% endblock %}
-
-{% block main %}
-<h2>Resultados de Busqueda</h2>
-
-
-<table>
-    <thead>
-        <tr>
-            <th scope="col">Direccion</th>
-        </tr> 
-    </thead>
-
-    <tbody>
-        {% for propiedad in propiedades %}
-        <tr>
-            <td>{{propiedad.direccion}}</td>     
-        </tr>
-        {% else %}
-            <span>No hay resultados en la busqueda</span>
-        {% endfor %}
-    </tbody>
-</table>
-{% endblock %}-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +39,7 @@
         
         $empezar_desde=($pagina-1)*$tamanio_paginas;//almacena el registro desde el cual queiro mostrar los resultado
 
-        $sql_total="SELECT * FROM propiedades ";
+        $sql_total="SELECT * FROM propiedades order by precio desc ";
 
         $resultado=$base->prepare($sql_total);
 
@@ -95,12 +60,6 @@
 
            $resultado->execute(array());
 
-
-             while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
-
-                echo "Operacion: " .$registro["tipo_operacion"]. "  Tipo:  " . $registro["tipo_propiedad"]. "<br>";
-                /*MOSTRAR DATOS DE LA PROPIEDAD*/
-            } 
 
              $resultado->closeCursor();
       }catch (Exception $e){

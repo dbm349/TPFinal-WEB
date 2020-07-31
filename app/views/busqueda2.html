@@ -19,48 +19,63 @@
 <h1 id="tituloP">Resultados de Busqueda</h1>
     
     <p id="ordenarpor">Ordenar por</p>
-    <form action="" id="seleccionar">
+    <form action="" target="_blank" id="seleccionar" method="POST">
         <select name="ordenar" id="ordenar">
             <option value="menor">Menor precio</option>
             <option value="mayor">Mayor precio</option>
         </select>
+        <button type="submit" id="aplicar">Aplicar</button>
     </form>
 
   <div id="divv">
     {% for propiedad in propiedades %}
-    <div id="div">    
+    <div id="div">  
+      <div id="primeraParte">  
+        <img src="/Images/sitio.svg" id="iconosProp">
         <th>Direccion </th><td>{{propiedad.direccion}}</td>
         <th>Localidad </th><td>{{propiedad.localidad}}</td>
         <th>Provincia </th><td>{{propiedad.provincia}}</td>
-    
-   
+      </div>
+
+      <div id="segundaParte">
         {% if propiedad.supTotal is not empty %}
-            <td>{{propiedad.supTotal}} totales</td>
+            <img src="/Images/cabana.svg" id="iconosProp">
+            <td>{{propiedad.supTotal}} m2 totales</td>
         {% endif %}
     
         {% if propiedad.supCub is not empty %}
-            <th>Superficie Cubierta </th><td>{{propiedad.supCub}}</td>
+        <img src="/Images/casa.svg" id="iconosProp">
+            <td>{{propiedad.supCub}} m2 cubiertos</td>
         {% endif %}
 
         {% if propiedad.ambientes is not empty %}
-            <th>Ambientes </th><td>{{propiedad.ambientes}}</td>
+            <img src="/Images/mansion.svg" id="iconosProp">
+            <th>Ambientes: </th><td>{{propiedad.ambientes}}</td>
         {% endif %}
    
     
         {% if propiedad.dormitorios is not empty %}
-            <th>Dormitorios </th><td id="dormit">{{propiedad.dormitorios}}</td>
+            <img src="/Images/dormir.svg" id="iconosProp">
+            <th>Dormitorios: </th><td id="dormit" class="iconoP">{{propiedad.dormitorios}}</td>
         {% endif %}
 
         {% if propiedad.baños is not empty %}
-            <th>Baños </th><td>{{propiedad.baños}}</td>
+            <img src="/Images/bano.svg" id="iconosProp">
+            <th>Baños: </th><td>{{propiedad.baños}}</td>
         {% endif %}
     
+      </div>
+
+      <div id="TerceraParte">
+        <img src="/Images/dinero.svg" id="iconosProp">
         {% if propiedad.precio is not empty %}
-            <th>Precio </th><td>${{propiedad.precio}}</td>
+            <th>Precio: </th><td>${{propiedad.precio}}</td>
         {% endif %}
- 
   
-    <th><a href="/publicacion/Ver?id={{propiedad.id_p}}">Ver Mas</a></th><br>
+    <th><a href="/publicacion/Ver?id={{propiedad.id_p}}" id="verMas">Ver Mas</a></th><br>
+
+      </div>
+  
     <th><input type="button" name="button" value="Contactar" id="contactar"></th>
  </div>
     <p class="espaciado"></p>

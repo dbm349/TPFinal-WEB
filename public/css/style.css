@@ -727,13 +727,43 @@ padding-right: 20px;
 
     #contactar{
         float: right;
+         height:2.5vw; 
+        width:7vw;
+        text-align-last: center;
+        font-weight: bold;
+    }
+
+    #primeraParte{
+        display: block;
+    }
+
+    #segundaParte{
+        display: block;
+    }
+
+    #terceraParte{
+        display: inline;
+    }
+
+
+    #verMas{
+        padding-left: 2vw;
+    }
+
+    #iconosProp{
+        display: inline;
+        height: 2vw;
+        width: 2vw;
+        top: 1vw;
+        margin-left: 1vw;
+        margin-bottom: 1vw;
     }
 
     #seleccionar{
         text-align-last: right;
         margin-right: 20vw;
         margin-bottom: 5vw;
-        
+        display: inline;
     }
 
 
@@ -746,8 +776,15 @@ padding-right: 20px;
 
     #ordenarpor{
         text-align-last: center;
-        margin-left: 45vw;
+        margin-left: 55vw;
+        display: inline;
+    }
 
+    #aplicar{
+        margin-bottom: 3vw;
+        height:2vw; 
+        width:5vw;
+        text-align-last: center;
     }
 /*----------------------RESPONSIVE---------------------*/
 
