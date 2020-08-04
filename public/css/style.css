@@ -716,7 +716,10 @@ padding-right: 20px;
         border-style: inset;
         border-color: crimson;
         font-family: initial;
-        padding: 2vw;
+        padding-left: 1vw;
+        padding-top: 1vw;
+        padding-bottom: 3vw;
+
     }
 
     #divv{
@@ -727,10 +730,11 @@ padding-right: 20px;
 
     #contactar{
         float: right;
-         height:2.5vw; 
+        height:2.5vw; 
         width:7vw;
         text-align-last: center;
         font-weight: bold;
+        margin-right: 2vw;
     }
 
     #primeraParte{
@@ -776,7 +780,7 @@ padding-right: 20px;
 
     #ordenarpor{
         text-align-last: center;
-        margin-left: 55vw;
+        margin-left: 15vw;
         display: inline;
     }
 
@@ -1140,6 +1144,24 @@ main #cuadroBusqueda form{
      font-family: fantasy;
     }
 
+/*-----------------------------MOSTRAR DATOS--------------*/
+
+    #datos{
+        margin-top: 5vw;
+        font-size: 2vw;
+        font-family: fantasy;
+    }
+
+    .espaciado{
+        margin-bottom: 5vw;
+        background-color: white;
+    }
+
+    #dormit{
+        padding-left: 2%;
+    }
+
+
 /*-----------------------FLECHA BACK------------------------*/
 
     .flecha-back{ 
@@ -1165,7 +1187,7 @@ main #cuadroBusqueda form{
         padding-right: 0vw;
         padding-top: 2vw;
         padding-bottom: 9vw;
-        margin-top: 12vw;
+        margin-top: 4vw;
 
     }
 
@@ -1187,18 +1209,18 @@ main #cuadroBusqueda form{
 
     #primeraParte{
         display: block;
-        font-size: 5vw;
+        font-size: 4vw;
     
     }
 
     #segundaParte{
         display: block;
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     #terceraParte{
         display: inline;
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
 
