@@ -105,7 +105,7 @@ class ControladorUsuarios extends Controller
         session_unset();
         session_destroy();
         $inicio = false;
-        return view('sesionCerrada',['inicio'=>$inicio]);
+        return view('usuario.ingresar',['inicio'=>$inicio]);
     }
 
     /**---------------------MODIFICACION DE USUARIO ----------------*/
@@ -188,6 +188,11 @@ class ControladorUsuarios extends Controller
         $inicio = true;
         $datosUser = $this->model->GetUsuario($usuario);
         return view('usuario.datos',['inicio'=>$inicio,'user'=>$datosUser]);
+    }
+
+    public function contactoUser(){
+        
+      return view('formulario-mail');
     }
 
 }

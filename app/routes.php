@@ -11,6 +11,7 @@
     $router->get('users/ModificarDatos', 'ControladorUsuarios@modificar');
     $router->post('users/update', 'ControladorUsuarios@update');
     $router->get('users/datos', 'ControladorUsuarios@vistaDatos');
+    $router->get('users/contacto', 'ControladorUsuarios@contactoUser');
 
     $router->get('publicacion/registroProp','ControladorPropiedades@registroProp');
     $router->post('publicacion/validateTipo','ControladorPropiedades@validarTipos');
@@ -35,3 +36,4 @@
 
     $router->get('not_found', 'ProjectController@notFound');
     $router->get('internal_error', 'ProjectController@internalError');
+    

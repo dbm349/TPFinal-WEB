@@ -554,7 +554,7 @@ input[type="submit"], input[type="reset"]{
 /*-------------------FORMULARIO PARA CARGAR PROPIEDADES--------------*/
 
 .formulario{
-margin-top: 50px;
+margin-top: 70px;
 }
 
 
@@ -794,7 +794,7 @@ padding-right: 20px;
     }
 /*----------------------RESPONSIVE---------------------*/
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 950px){
     
     header{
         padding: 0 20px;

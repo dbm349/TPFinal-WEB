@@ -1,0 +1,37 @@
+ extends "base.html" %}
+
+{% block title %}Inicio Sesion{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block main %}
+    <form action="enviar-mail.php" method="POST" enctype="multipart/form-data" class="formulario">
+           <div>
+                <input class="enviar" type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-zÀ-ž\s]{3,20}" placeholder="Nombre*" value="{{ nombre }}" required>
+            </div>
+
+            <div>
+                <input class="enviar" type="email" id="email" name="email" placeholder="Email*" value="{{ email }}" required>
+            </div>
+
+            <div>
+                <textarea class="enviar" name="mensaje" rows="10" cols="40" placeholder="Agregue el mensaje aquí"></textarea>
+            </div>
+
+            <div class="botonEnviar">
+                <input type="submit" name="submit" value="Enviar" >
+            </div>
+
+    </form>
+
+    {% if erroresInicio is not empty %}
+        <p id="datosIncompletos">Debe completar todos los casilleros</p>
+    {% endif %}
+{% endblock %}
