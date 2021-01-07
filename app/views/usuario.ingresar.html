@@ -9,9 +9,11 @@
 {% block head %}
     {{ parent() }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/formularios.css">
 {% endblock %}
 
 {% block main %}
+
     <form action="/users/sesion" method="POST" enctype="multipart/form-data" class="formulario">
         <h2>INICIAR SESIÓN</h2>
             <div>

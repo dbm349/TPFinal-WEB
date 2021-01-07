@@ -9,13 +9,13 @@
 {% block head %}
     {{ parent() }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/formularios.css">
 {% endblock %}
 
 {% block main %}
-    <h2 id="tituloP">Nueva propiedad para publicar</h2>
     <form action="/publicacion/validateTipo" method="POST" enctype="multipart/form-data" class="formulario">
         
-            <h3>Nueva Publicación</h3>
+            <h2>Nueva Publicación</h2>
 
             <div>
                 <label for="operacion">Operación </label>
