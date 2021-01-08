@@ -1,0 +1,183 @@
+
+.flecha-back{ 
+    top: 8vw;
+    width: 7vw;
+    height: 3vw;
+    margin-left: 2vw;
+
+
+}
+
+#flecha:hover{
+    cursor: pointer;
+    transform: transla;
+    box-shadow: 4px 30px 6px 0px rgba(50, 50, 50, 0.45);
+}
+
+
+#divv{
+    font-size: 2em;  
+    margin-top: 5%; 
+    text-align: center;
+}
+
+#contactar{
+    float: right;
+    height:2.5vw; 
+    width:7vw;
+    text-align-last: center;
+    font-weight: bold;
+    margin-right: 2vw;
+}
+
+#primeraParte{
+    display: block;
+}
+
+#segundaParte{
+    display: block;
+}
+
+#terceraParte{
+    display: inline;
+}
+
+
+#verMas{
+    padding-left: 2vw;
+}
+
+#iconosProp{
+    display: inline;
+    height: 2vw;
+    width: 2vw;
+    top: 1vw;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+}
+
+#seleccionar{
+    text-align-last: right;
+    margin-right: 20vw;
+    margin-bottom: 5vw;
+    display: inline;
+}
+
+
+#ordenar{
+    height: 2vw;
+    width: 10vw;
+    font-size: 1.2vw;
+    text-align-last: left;
+}
+
+
+#ordenarpor{
+    text-align-last: center;
+    margin-left: 5%;
+    padding-left: 10%; 
+    display: inline;
+}
+
+
+/*------------RESPONSIVE-------------------------------------*/
+
+@media screen and (max-width: 950px){
+
+.flecha-back{ 
+    top: 8vw;
+    width: 7vw;
+    height: 3vw;
+    margin-left: 2vw;
+
+
+}
+
+#flecha:hover{
+    cursor: pointer;
+    transform: transla;
+    box-shadow: 4px 30px 6px 0px rgba(50, 50, 50, 0.45);
+}
+
+#div{
+    border-style: inset;
+    border-color: crimson;
+    font-family: initial;
+    padding-left: 0vw;
+    padding-right: 0vw;
+    padding-top: 2vw;
+    padding-bottom: 9vw;
+    margin-top: 4vw;
+
+}
+
+#divv{
+    font-size: 1em;  
+    margin-top: 5%; 
+    text-align: center;    
+}
+
+#contactar{
+    float: right;
+    height:8vw; 
+    width:28vw;
+    font-size: 4vw;
+    text-align-last: center;
+    font-weight: bold;
+    margin-right: 2vw;
+}
+
+#primeraParte{
+    display: block;
+    font-size: 4vw;
+
+}
+
+#segundaParte{
+    display: block;
+    font-size: 4vw;
+}
+
+#terceraParte{
+    display: inline;
+    font-size: 4vw;
+}
+
+
+#verMas{
+    padding-left: 2vw;
+    display: block;
+}
+
+#iconosProp{
+    display: inline;
+    height: 4vw;
+    width: 5vw;
+    top: 1vw;
+    margin-bottom: 1vw;
+
+}
+
+#seleccionar{
+    text-align-last: right;
+    margin-right: 20vw;
+    margin-bottom: 5vw;
+    display: inline;
+}
+
+
+#ordenar{
+    height: 5%;
+    width: 30%;
+    font-size: 90%;
+    text-align-last: left;
+    padding: 0px;
+}
+
+#ordenarpor{
+    text-align-last: center;
+    display: inline;
+    margin-left: 0px;
+}
+
+}
