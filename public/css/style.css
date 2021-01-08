@@ -508,51 +508,6 @@ img{
     }
 
 
-/*------------------------MODIFICAR DATOS-----------------------*/
-.formulario #publi1 input[type="number"],
-.formulario #publi1 input[type="text"],
-.formulario #publi1 input[type="password"],
-.formulario #publi1 input[type="email"]{
-    padding: 0px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 17px;
-    opacity: 1;
-}
-/*------------------------------------------------------------------------*/
-
-.formulario input[type="text"]{
-margin-top: 10px;
-margin-bottom: 10px;
-font-size: 17px;
-}
-
-h3{
-text-align: center;
-padding-bottom: 5px;
-}
-
-.formulario input[type="number"]{
-padding: 0px;
-margin-top: 10px;
-margin-bottom: 10px;
-font-size: 17px;
-width: 200px;
-}
-
-.formulario input[type="radio"]{
-padding-left:  0px;
-margin-top: 10px;
-margin-bottom: 10px;
-font-size: 17px;
-
-}
-
-.formulario label{
-padding-right: 20px;
-}
-
-
 /*---------------------IMAGEN 404---------------------------*/
 
     #imagenError h2{
@@ -623,21 +578,15 @@ padding-right: 20px;
 
 /*-----------------------------MOSTRAR DATOS--------------*/
 
-    #datos{
-        margin-top: 5vw;
-        font-size: 3vw;
-        font-family: fantasy;
-    }
+.espaciado{
+    margin-bottom: 5px;
+    height: 30px;
+    background-color: white;
+}
 
-    .espaciado{
-        margin-bottom: 5px;
-        height: 30px;
-        background-color: white;
-    }
-
-    #dormit{
-        padding-left: 2%;
-    }
+#dormit{
+    padding-left: 2%;
+}
 
 /*-----------------------FLECHA BACK------------------------*/
 
@@ -1017,38 +966,7 @@ main #cuadroBusqueda form{
         
     }    
 
-/*-----------------------------MOSTRAR DATOS--------------*/
 
-    table{
-        margin: 0 auto;
-    }
-
-    th{
-        text-align: left;
-        padding: 1%;
-        padding-left: 1px;
-        font-size: 80%;
-    }
-
-    td{
-        text-align: left;
-        padding-left: 1px;
-        padding-right: 0px;
-        font-size: 80%;
-    }
-
-    #t01 tr:nth-child(even) {
-        background-color: #fff;
-    }
-
-    #t01 tr:nth-child(odd) {
-        background-color: #BDBCB2;
-    }
-
-    #t01 th {
-        background-color: black;
-        color: white;
-    }
 /*------------------BOTON VER PROPIEDAD(PORTADA)---------*/
     
 #botonVerPropiedad input{

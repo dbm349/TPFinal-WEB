@@ -9,12 +9,13 @@
 {% block head %}
     {{ parent() }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/modificarDatos.css">
 {% endblock %}
 
 {% block main %}
     <form action="/users/update" method="POST" enctype="multipart/form-data" class="formulario">
 
-            <h3>Modificacion de Datos Personales</h3>
+            <h1>Modificación de Datos Personales</h1>
 
             <div id="publi1">
                 <label for="email">Email </label>

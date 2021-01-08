@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin-top: 6%;
+}
+
+.formulario{
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    width: 50%;
+    max-width: 90%;
+    background:#F3F3F3;
+    padding: 30px;
+    border:1px solid rgba(0,0,0,2); 
+    background-color: darkgray;
+    border-radius:5px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    padding-top: 0%;
+}
+    
+  
+input[type="submit"]{
+        border: 0px;
+        opacity: 0.8;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        font-weight: 900;
+        font-size: 14px;
+        margin-bottom: 20px;
+        border-radius: 5px 7px 7px 5px;
+}
+
+    
+.formulario #publi input[type="text"]{
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+
+.formulario label {
+    padding-right: 20px;
+    font-weight: 900;
+}
+
+
+.formulario #publi1 input[type="number"],
+.formulario #publi1 input[type="text"],
+.formulario #publi1 input[type="password"],
+.formulario #publi1 input[type="email"]{
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    opacity: 1;
+}
+
+
+body {
+    background-image: url('/Images/fondo-modificarDatos.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+/*----------------------RESPONSIVE---------------------*/
+
+@media screen and (max-width: 950px){
+
+input[type="submit"]{
+    border: 0px;
+    opacity: 0.8;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-radius: 5px 7px 7px 5px;
+}
+
+body {
+    background-color: url('/Images/fondo-modificarDatos.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+}
