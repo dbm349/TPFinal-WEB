@@ -8,9 +8,10 @@
 
 .flecha-back{ 
     top: 8vw;
-    width: 15%;
+    width: 5%;
     height: 3vw;
-    margin-left: 2vw;
+    margin-left: 2%;
+    margin-top: 4%;
 }
 
 #flecha:hover{
@@ -99,7 +100,9 @@ img{
 }
 
 body {
-
+    background-image: url('/Images/fondo-formularios.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     background-size: 100% 100%;
 }
 
@@ -109,9 +112,10 @@ body {
 
 .flecha-back{ 
     top: 8vw;
-    width: 7vw;
+    width: 10%;
     height: 3vw;
     margin-left: 2vw;
+    
 }
 
 #flecha:hover{
@@ -202,7 +206,9 @@ body {
 }
 
 body {
-
+    background-image: url('/Images/fondo-formularios.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     background-size: 100% 100%;
 }
 

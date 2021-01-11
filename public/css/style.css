@@ -62,7 +62,7 @@ header nav ul li{
     list-style: none;
     position: relative;
 }
-
+/*
 header nav ul li.sub-menu:before{
     content:'\f0d7 ';
     position: absolute;
@@ -75,11 +75,12 @@ header nav ul li.sub-menu:before{
 header nav ul li.active.sub-menu:before{
     content:'\f0d8 ';
 }
+*/
 
 header nav ul li ul{
     position: absolute;
     left: 0;
-    background: rgb(196, 40, 40);
+    background: darkgray;
     display: none;
 }
 
@@ -101,10 +102,14 @@ header nav ul li a{
     display: block;
 }
 
-header nav ul li a:hover,
-header nav ul li a.active{
+header nav li:hover > ul{
     color: #fff;
-    background: rgb(224, 47, 47);;
+    background:black;
+    display:block;
+}
+
+header nav li a:hover{
+    background-color:darkgray;
 }
 
 .menu-toggle{
@@ -149,7 +154,7 @@ main #cuadroBusqueda form{
 }
 
 #cuadroBusqueda h1{
-    background-color: indianred;
+    background-color: darkgray;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 25px;
@@ -185,7 +190,7 @@ main #cuadroBusqueda form{
 	z-index: 998;
 	height: 500px;
 }
-
+/*
 img{
     position: relative;
     height: 100%;
@@ -194,7 +199,7 @@ img{
     left: 0;
     object-fit: cover;
 
-}
+}*/
 
 .imgportada{
 	position: fixed;
@@ -816,7 +821,7 @@ main #cuadroBusqueda form{
 }
 
 #cuadroBusqueda h1{
-    background-color: indianred;
+    background-color: darkgray;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 40px;
