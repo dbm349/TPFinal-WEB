@@ -100,6 +100,7 @@ header nav ul li a{
     color: #fff;
     text-decoration: none;
     display: block;
+    
 }
 
 header nav li:hover > ul{
@@ -215,12 +216,14 @@ img{
 	opacity: 0;
 }
 
+
 .active{
 	/*left: 0 !important;*/
 	opacity: 1 !important;
-    transition: all 1s;
+    /*transition: all 1s;*/
     z-index: 2000;
-}
+} 
+
 
 #indicadores{
 	width: 100%;
@@ -545,44 +548,9 @@ img{
         border-radius: 5px 7px 7px 5px;
         font-weight: bold;
     }
-/*---------------------DETALLE PROPIEDAD-----------------------*/
-    #parrafo0{
-     padding-top:6vw; 
-     text-align: left;
-     font-size: 2vw;
-     padding-left: 3vw;
-     font-weight: bold;
-     font-family: fantasy;
-    }
-
-    #parrafo{
-     padding-top:3vw;
-     padding-bottom: 10px; 
-     text-align: left;
-     padding-left: 3vw;
-     font-size: 2vw;
-     font-weight: bold;
-    font-family: fantasy;
-    }
-    
-    #ubicacion #items{
-        padding-bottom: 5px;
-        padding-top:5px; 
-        padding-left: 40px;
-        float: left; 
-        font-size: 1.5vw;
-    }
-
-    #caracteristicas #items{
-        padding-bottom: 5px;
-        padding-top:5px; 
-        padding-left: 40px;
-        float: left;
-        font-size: 1.5vw;
-    }
 
 /*-----------------------------MOSTRAR DATOS--------------*/
-
+/*
 .espaciado{
     margin-bottom: 5px;
     height: 30px;
@@ -592,7 +560,7 @@ img{
 #dormit{
     padding-left: 2%;
 }
-
+*/
 /*----------------------RESPONSIVE---------------------*/
 
 @media screen and (max-width: 950px){
@@ -890,15 +858,7 @@ main #cuadroBusqueda form{
     border-radius: 5px 7px 7px 5px;
     font-weight: bold;
 }
-/*---------------------DETALLE PROPIEDAD-----------------------*/
-    #parrafo0{
-     padding-top:12vw; 
-     text-align: left;
-     font-size: 2vw;
-     padding-left: 3vw;
-     font-weight: bold;
-     font-family: fantasy;
-    }
+
 
 /*-----------------------------MOSTRAR DATOS--------------*/
 

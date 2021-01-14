@@ -26,30 +26,30 @@
     text-align: center;
 }
 
-#contactar{
-    float: right;
-    height:2.5vw; 
-    width:7vw;
-    text-align-last: center;
-    font-weight: bold;
-    margin-right: 2vw;
+#primeraParte, #segundaParte{
+    display: block;
+    font-size: x-large;
+    padding-top: 1%;
+    padding-bottom: 2%;
 }
 
-#primeraParte{
-    display: block;
-}
-
-#segundaParte{
-    display: block;
-}
 
 #terceraParte{
-    display: inline;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: darkgray;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 
 #verMas{
     padding-left: 2vw;
+    float: right;
+    margin-right: 2%;
+    font-size: smaller;
+    margin-top: 2%;
 }
 
 #iconosProp{
@@ -58,7 +58,7 @@
     width: 2vw;
     top: 1vw;
     margin-left: 1vw;
-    margin-bottom: 1vw;
+    
 }
 
 #seleccionar{
@@ -84,11 +84,6 @@
     display: inline;
 }
 
-.espaciado{
-    margin-bottom: 5px;
-    height: 30px;
-    background-color: white;
-}
 
 #dormit{
     padding-left: 2%;
@@ -98,8 +93,21 @@ img{
     width: 6%;
 }
 
-body {
+div#div{
+    border:solid;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 2%;
+    border-radius: 15px 15px ;
+    background-color: gainsboro;
+    text-align: left;
+}
 
+
+body {
+    background-image: url('/Images/fondo-busqueda.jpg');
     background-size: 100% 100%;
 }
 
@@ -176,7 +184,6 @@ body {
     width: 5vw;
     top: 1vw;
     margin-bottom: 1vw;
-
 }
 
 #seleccionar{

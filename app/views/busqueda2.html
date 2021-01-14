@@ -34,7 +34,7 @@
         <img src="/Images/sitio.svg" id="iconosProp">
         <th>Direccion </th><td>{{propiedad.direccion}}</td>
         <th>Localidad </th><td>{{propiedad.localidad}}</td>
-        <th>Provincia </th><td>{{propiedad.provincia}}</td>
+        <th>Provincia </th><td>{{propiedad.provincia}}</td> 
       </div>
 
       <div id="segundaParte">
@@ -71,15 +71,15 @@
         {% if propiedad.precio is not empty %}
             <th>Precio: </th><td>${{propiedad.precio}}</td>
         {% endif %}
-  
-    <th><a href="/publicacion/Ver?id={{propiedad.id_p}}" id="verMas">Ver Mas</a></th><br>
+
+        {% if propiedad.precio is empty %}
+            <th>Consultar precio </th>
+        {% endif %}
 
       </div>
-  
-    <th>   
-        <input type="button" name="button" value="Contactar" id="contactar" onclick="window.location.href='formulario-mail.html'">
-    </th>
 
+      <th><a href="/publicacion/Ver?id={{propiedad.id_p}}" id="verMas">Ver en Detalle</a></th><br>
+  
  </div>
     <p class="espaciado"></p>
 

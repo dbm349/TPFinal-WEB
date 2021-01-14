@@ -6,6 +6,12 @@
     
 }
 
+h1 #datos{
+    padding-top: 2%;
+    padding-bottom: 4%;
+    text-align: center;
+}
+
 .flecha-back{ 
     top: 8vw;
     width: 5%;
@@ -29,13 +35,24 @@
 
 #contactar{
     float: right;
-    height:2.5vw; 
-    width:7vw;
-    text-align-last: center;
+    text-align: center;
     font-weight: bold;
     margin-right: 2vw;
+    transition-duration: 0.3s;
+    background-color: darkgray;
+    border-color: #888;
+    border-radius: 5px 7px 7px 5px;
+    padding: 2vw 3vw;
+    font-size: large;
+    color: white;
+    background-color: black;
 }
 
+
+#contactar:hover {
+    background-color: #888; 
+    color: black;
+}
 #primeraParte{
     display: block;
 }
@@ -51,6 +68,7 @@
 
 #verMas{
     padding-left: 2vw;
+  
 }
 
 #iconosProp{
@@ -99,8 +117,47 @@ img{
     width: 6%;
 }
 
+
+#parrafo0{
+    padding-top:6vw; 
+    text-align: left;
+    font-size: 2vw;
+    padding-left: 3vw;
+    font-weight: bold;
+    font-family: revert;
+}
+
+#parrafo{
+    padding-top:3vw;
+    padding-bottom: 10px; 
+    text-align: left;
+    padding-left: 3vw;
+    font-size: 2vw;
+    font-weight: bold;
+   font-family: revert;
+}
+   
+ #ubicacion #items{
+       padding-bottom: 5px;
+       padding-top:5px; 
+       padding-left: 40px;
+       float: left; 
+       font-size: 1.5vw;
+       font-weight: 600;
+}
+
+#caracteristicas #items{
+       padding-bottom: 5px;
+       padding-top:5px; 
+       padding-left: 40px;
+       float: left;
+       font-size: 1.5vw;
+       font-weight: 600;
+}
+
+
 body {
-    background-image: url('/Images/fondo-formularios.jpg');
+    background-image: url('/Images/fondo-busqueda.jpg'); /*antes estaba la de formularios*/
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
