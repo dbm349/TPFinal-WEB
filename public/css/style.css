@@ -34,10 +34,11 @@ header {
     width: 100%;
     box-sizing: border-box;
     z-index: 6000;
-    padding-left: 10px;
-    padding-right: 90px;
+    padding-left: 0.5%;
+    padding-right: 6%;
 
 }
+
 
 header .logo{
     color: #fff;
@@ -47,6 +48,8 @@ header .logo{
     float: left;
     font-weight: bold;
 }
+
+
 
 header nav{
     float: right;
@@ -74,8 +77,8 @@ header nav ul li.sub-menu:before{
 
 header nav ul li.active.sub-menu:before{
     content:'\f0d8 ';
-}
-*/
+}*/
+
 
 header nav ul li ul{
     position: absolute;
@@ -96,7 +99,7 @@ header nav ul li ul li{
 header nav ul li a{
     height: 50px;
     line-height: 50px;
-    padding: 0 20px;
+    padding: 0 1vw;
     color: #fff;
     text-decoration: none;
     display: block;
@@ -152,6 +155,7 @@ main #cuadroBusqueda form{
     z-index: 5000;
     padding-left: 30px;
     padding-right: 30px;
+    display: block;
 }
 
 #cuadroBusqueda h1{
@@ -561,12 +565,26 @@ img{
     padding-left: 2%;
 }
 */
+
+
+#iconmenu{
+    display: none;
+}
+
+#btn-menu{
+    display: none;
+}
+
 /*----------------------RESPONSIVE---------------------*/
 
 @media screen and (max-width: 950px){
-    
+   
+    /* 
     header{
-        padding: 0 20px;
+        padding-left:3%;
+        padding-right: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
         position: fixed;
     }
 
@@ -605,12 +623,19 @@ img{
     header nav ul li ul li{
         width: 100%;
     }
+*/
+    /*---------------------------PRUEBA-------------------*/
+    header{
+        width: 100%;
+        margin-right: 0px;
+    }
+
 
    /*---------responsive imagenes-------------*/
 
-   body{
-    margin-top: 6%;
-   }
+     body{
+        margin-top: 6%;
+    }
         
     .circles{
         border: white 0px solid;
@@ -652,9 +677,9 @@ img{
     }
 
     #slideshow{
-    position: initial;
-    z-index: 998;
-    height: 500px;
+        position: initial;
+        z-index: 998;
+        height: 500px;
     }
 
 
@@ -722,7 +747,7 @@ img{
 
 
     #enfila{
-        width: 112px;
+        width: 12vw;
         height: 10%;
         font-size: 20px;
         float: none;
@@ -751,54 +776,54 @@ img{
         margin-bottom: 0;
         margin-top: 6%;
         margin-left: 3px;
-        padding: 2px;
+        padding: 0px;
         font-size: 15px;
         margin-bottom: 10px;
         width: 45vw;
-        height: 8vw;
+        height: 7vw;
     }
 /*--------------MAIN--------------*/
 
-main #cuadroBusqueda{
-    width: 100%;
-    padding: 0 45px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    z-index: 5000;
-    padding-right: 0px;
-    padding-left: 0px;
-}
+    main #cuadroBusqueda{
+        width: 100%;
+        padding: 0 45px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        z-index: 5000;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 
-main #cuadroBusqueda form{
-    padding: 30px 10px;
-    background-color: rgba(72,69,64,.7);
-    border-radius: 8px;
-    margin-top: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    max-width: 1050px;
-    position: relative;
-    z-index: 5000;
-    padding-left: 30px;
-    padding-right: 30px;
-}
+    main #cuadroBusqueda form{
+        padding: 30px 10px;
+        background-color: rgba(72,69,64,.7);
+        border-radius: 8px;
+        margin-top: 5vw;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        max-width: 1050px;
+        position: relative;
+        z-index: 5000;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
-#cuadroBusqueda h1{
-    background-color: darkgray;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 40px;
-    padding-bottom: 25px;
-    margin-left: 0px;
-    margin-top: 5.5vw;
-    text-align: center;
-    font-size: large;
-}
+    #cuadroBusqueda h1{
+        background-color: darkgray;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-bottom: 25px;
+        margin-left: 0px;
+        margin-top: 5.3vw;
+        text-align: center;
+        font-size: large;
+    }
 
 /*----------------------------------------VISTA FUERA DE SESIÓN---------------*/
     #fueraSesion{
@@ -843,21 +868,21 @@ main #cuadroBusqueda form{
 
 /*------------------BOTON VER PROPIEDAD(PORTADA)---------*/
     
-#botonVerPropiedad input{
-    z-index: 7000;
-    position: relative;
-    margin-right: 10%;
-    margin-bottom: 10%;
-    width: 150px;
-    height: 40px;
-    float: right;
-    background-color: white;
-    border-color:black;
-    opacity: 1;
-    top: 30px;
-    border-radius: 5px 7px 7px 5px;
-    font-weight: bold;
-}
+    #botonVerPropiedad input{
+        z-index: 7000;
+        position: relative;
+        margin-right: 10%;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        width: 150px;
+        height: 40px;
+        float: right;
+        background-color: white;
+        border-color:black;
+        opacity: 1;
+        border-radius: 5px 7px 7px 5px;
+        font-weight: bold;
+    }
 
 
 /*-----------------------------MOSTRAR DATOS--------------*/
@@ -877,9 +902,123 @@ main #cuadroBusqueda form{
         padding-left: 2%;
     }
 
+    h1 {
+        padding-top: 6%;
+        text-align: center;
+    }
+
+    #btn-menu{
+        float: left;
+    }   
+    
+    header label{
+        display: contents;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+
+    .menu ul{
+        margin: 0;
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu li:hover{
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .menu li a{
+        display:block;
+        color: #fff;
+        text-decoration:none;
+    }
+
+    header label{
+        display:block;
+    }
+
+    .menu{
+        position: absolute;
+        background: black;
+        width: 40%;
+        margin-left: -40%;
+        transition: all;
+        text-align: left;
+    }
+
+    .menu ul{
+        flex-direction:column ;
+
+    }
+
+    #btn-menu:checked ~ .menu {
+        margin: 0;
+
+    }
+
+    #iconmenu{
+        display: block;
+        color: #fff;
+        font-size: 4vw;
+        font-weight: bold;
+        width: 30px;
+        height:  initial;
+    }
+  
+    #iconmenu:hover{
+        cursor: pointer;
+    }
+
+    header {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #262626;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 6000;
+        padding-right: 6%;
+        padding-left: 0px; 
+    }
+
+    header .logo {
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        font-size: 4vw;
+        float:right;
+        font-weight: bold;
+        margin-left: 3%;
+    }
 
 
- 
+    .menu li ul li{
+        position: relative;;
+    }
+
+    header .menu ul li ul li:hover{
+        cursor:pointer;
+    }
+
+
+
+    /*----------------------------------------asdasd---------------------*/
+
+    header .menu ul li ul li{
+        background-color: black;
+        transition: all;
+        z-index: 9000;
+        text-decoration: none;
+    
+    }
+
+    header .menu ul li ul li:hover{
+        cursor:pointer;
+    }
+
+
 
 
 }
