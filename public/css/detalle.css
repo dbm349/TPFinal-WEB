@@ -202,11 +202,19 @@ body {
 #contactar{
     float: right;
     height:8vw; 
-    width:28vw;
     font-size: 4vw;
     text-align-last: center;
     font-weight: bold;
     margin-right: 2vw;
+}
+
+#contactar {
+    float: initial;
+    text-align: center;
+    margin-top: 2vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    padding: 1vw 2vw;
 }
 
 #primeraParte{
@@ -225,6 +233,44 @@ body {
     font-size: 4vw;
 }
 
+
+#ubicacion #items{
+    padding-bottom: 5px;
+    padding-top:5px; 
+    padding-left: 4%;
+    float: left; 
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+#caracteristicas #items{
+    padding-bottom: 5px;
+    padding-top:5px; 
+    padding-left: 4%;
+    float: left;
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+#parrafo0{
+    padding-top:6vw; 
+    text-align: left;
+    font-size: 4vw;
+    padding-left: 3vw;
+    font-weight: bold;
+    font-family: revert;
+    margin-top: 6vw;
+}
+
+#parrafo{
+    padding-top:3vw;
+    padding-bottom: 10px; 
+    text-align: left;
+    padding-left: 3vw;
+    font-size: 4vw;
+    font-weight: bold;
+   font-family: revert;
+}
 
 #verMas{
     padding-left: 2vw;
@@ -267,6 +313,35 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
+}
+
+
+#iconmenu{
+    display: block;
+    color: #fff;
+    font-size: 4vw;
+    font-weight: bold;
+    width: 30px;
+    height:  initial;
+}
+
+#iconmenu:hover{
+    cursor: pointer;
+}
+
+
+header label{
+    display: contents;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+
+#datos{
+    margin-top: 5vw;
+    font-size: 5vw;
+    font-family: fantasy;
 }
 
 }
