@@ -9,7 +9,7 @@
 
 body {
     margin-top: 6%;
-    background-color: darkgray;
+    background-image: url('/Images/fondo-busqueda.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
