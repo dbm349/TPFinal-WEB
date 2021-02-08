@@ -3,7 +3,7 @@
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
-    
+    text-align: center;
 }
 
 
@@ -15,17 +15,26 @@ body {
     background-size: 100% 100%;
 }
 
-#t01 th{
-    font-family: sans-serif;
-    box-sizing: border-box;
+table{
+    display: inline;
+    font-size: x-large;
+}
+
+table th{
     text-align: left;
 }
 
+table td{
+    text-align: left;
+    padding-left: 4vw;
+
+}
 
 #datos{
     margin-top: 5vw;
     font-size: 3vw;
     font-family: sans-serif;
+    padding-bottom: 3vw;
 }
 
 /*----------------------RESPONSIVE---------------------*/
@@ -41,35 +50,42 @@ body {
 }
 
 
+
 table{
-    margin: 0 auto;
+    display: inline;
+    font-size: x-large;
 }
 
-th{
-    text-align: center;
-    padding: 1%;
-    padding-left: 1px;
-    font-size: 80%;
-}
-
-td{
+table th{
     text-align: left;
-    padding-left: 1px;
-    padding-right: 0px;
-    font-size: 80%;
 }
 
-#t01 tr:nth-child(even) {
-    background-color: #fff;
+table td{
+    text-align: left;
+    padding-left: 4vw;
+
 }
 
-#t01 tr:nth-child(odd) {
-    background-color: #BDBCB2;
+#datos{
+    margin-top: 15%;
+    font-size: x-large;
+    font-family: sans-serif;
+    padding-bottom: 3vw;
+    display: block;
+    padding-top: 2%;
 }
 
-#t01 th {
-    background-color: black;
-    color: white;
+#iconmenu:hover{
+    cursor: pointer;
 }
+
+
+header label{
+    display: contents;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
 
 }
